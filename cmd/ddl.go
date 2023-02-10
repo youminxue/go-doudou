@@ -4,11 +4,11 @@ import (
 	"github.com/kelseyhightower/envconfig"
 	"github.com/sirupsen/logrus"
 	"github.com/spf13/cobra"
-	"github.com/unionj-cloud/go-doudou/v2/cmd/internal/ddl"
-	"github.com/unionj-cloud/go-doudou/v2/cmd/internal/ddl/config"
-	"github.com/unionj-cloud/go-doudou/v2/toolkit/dotenv"
-	"github.com/unionj-cloud/go-doudou/v2/toolkit/pathutils"
-	"github.com/unionj-cloud/go-doudou/v2/toolkit/yaml"
+	"github.com/youminxue/v2/cmd/internal/ddl"
+	"github.com/youminxue/v2/cmd/internal/ddl/config"
+	"github.com/youminxue/v2/toolkit/dotenv"
+	"github.com/youminxue/v2/toolkit/pathutils"
+	"github.com/youminxue/v2/toolkit/yaml"
 )
 
 var dir string

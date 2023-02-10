@@ -3,8 +3,8 @@ package memberlist_test
 import (
 	"github.com/golang/mock/gomock"
 	"github.com/stretchr/testify/require"
-	"github.com/unionj-cloud/go-doudou/v2/toolkit/memberlist"
-	memmock "github.com/unionj-cloud/go-doudou/v2/toolkit/memberlist/mock"
+	"github.com/youminxue/v2/toolkit/memberlist"
+	memmock "github.com/youminxue/v2/toolkit/memberlist/mock"
 	"reflect"
 	"testing"
 )

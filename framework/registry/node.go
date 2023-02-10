@@ -1,12 +1,12 @@
 package registry
 
 import (
-	"github.com/unionj-cloud/go-doudou/v2/framework/internal/config"
-	"github.com/unionj-cloud/go-doudou/v2/framework/registry/constants"
-	"github.com/unionj-cloud/go-doudou/v2/framework/registry/etcd"
-	"github.com/unionj-cloud/go-doudou/v2/framework/registry/memberlist"
-	"github.com/unionj-cloud/go-doudou/v2/framework/registry/nacos"
-	logger "github.com/unionj-cloud/go-doudou/v2/toolkit/zlogger"
+	"github.com/youminxue/v2/framework/internal/config"
+	"github.com/youminxue/v2/framework/registry/constants"
+	"github.com/youminxue/v2/framework/registry/etcd"
+	"github.com/youminxue/v2/framework/registry/memberlist"
+	"github.com/youminxue/v2/framework/registry/nacos"
+	logger "github.com/youminxue/v2/toolkit/zlogger"
 )
 
 type IServiceProvider interface {

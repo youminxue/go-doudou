@@ -1,10 +1,10 @@
 package memberlist
 
 import (
-	"github.com/unionj-cloud/go-doudou/v2/framework/internal/config"
-	"github.com/unionj-cloud/go-doudou/v2/toolkit/cast"
-	"github.com/unionj-cloud/go-doudou/v2/toolkit/memberlist"
-	"github.com/unionj-cloud/go-doudou/v2/toolkit/stringutils"
+	"github.com/youminxue/v2/framework/internal/config"
+	"github.com/youminxue/v2/toolkit/cast"
+	"github.com/youminxue/v2/toolkit/memberlist"
+	"github.com/youminxue/v2/toolkit/stringutils"
 	"strconv"
 	"time"
 )

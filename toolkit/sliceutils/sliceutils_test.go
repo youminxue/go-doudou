@@ -2,7 +2,7 @@ package sliceutils
 
 import (
 	"github.com/stretchr/testify/assert"
-	"github.com/unionj-cloud/go-doudou/v2/toolkit/cast"
+	"github.com/youminxue/v2/toolkit/cast"
 	"reflect"
 	"testing"
 )

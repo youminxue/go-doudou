@@ -3,10 +3,10 @@ package restclient_test
 import (
 	"github.com/go-resty/resty/v2"
 	. "github.com/smartystreets/goconvey/convey"
-	"github.com/unionj-cloud/go-doudou/v2/framework/internal/config"
-	"github.com/unionj-cloud/go-doudou/v2/framework/registry"
-	"github.com/unionj-cloud/go-doudou/v2/framework/restclient"
 	"github.com/wubin1989/nacos-sdk-go/v2/common/constant"
+	"github.com/youminxue/v2/framework/internal/config"
+	"github.com/youminxue/v2/framework/registry"
+	"github.com/youminxue/v2/framework/restclient"
 	"os"
 	"testing"
 )

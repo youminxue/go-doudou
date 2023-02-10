@@ -2,9 +2,9 @@ package codegen
 
 import (
 	log "github.com/sirupsen/logrus"
-	"github.com/unionj-cloud/go-doudou/v2/toolkit/astutils"
-	"github.com/unionj-cloud/go-doudou/v2/cmd/internal/ddl/table"
-	"github.com/unionj-cloud/go-doudou/v2/version"
+	"github.com/youminxue/v2/cmd/internal/ddl/table"
+	"github.com/youminxue/v2/toolkit/astutils"
+	"github.com/youminxue/v2/version"
 	"os"
 	"path/filepath"
 	"strings"
@@ -19,7 +19,7 @@ package dao
 
 import (
 	"context"
-	"github.com/unionj-cloud/go-doudou/v2/toolkit/sqlext/query"
+	"github.com/youminxue/v2/toolkit/sqlext/query"
 	"{{.EntityPackage}}"
 )
 

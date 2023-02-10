@@ -1,7 +1,7 @@
 package imgutils_test
 
 import (
-	"github.com/unionj-cloud/go-doudou/v2/toolkit/imgutils"
+	"github.com/youminxue/v2/toolkit/imgutils"
 	"os"
 	"path/filepath"
 	"testing"

@@ -2,8 +2,8 @@ package client
 
 import (
 	"github.com/sirupsen/logrus"
-	"github.com/unionj-cloud/go-doudou/v2/cmd/internal/openapi/v3/codegen"
-	v3 "github.com/unionj-cloud/go-doudou/v2/toolkit/openapi/v3"
+	"github.com/youminxue/v2/cmd/internal/openapi/v3/codegen"
+	v3 "github.com/youminxue/v2/toolkit/openapi/v3"
 	"os"
 	"path/filepath"
 	"strings"

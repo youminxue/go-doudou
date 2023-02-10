@@ -5,11 +5,11 @@ import (
 	"fmt"
 	"github.com/iancoleman/strcase"
 	"github.com/pkg/errors"
-	"github.com/unionj-cloud/go-doudou/v2/toolkit/astutils"
-	v3 "github.com/unionj-cloud/go-doudou/v2/toolkit/openapi/v3"
-	"github.com/unionj-cloud/go-doudou/v2/toolkit/sliceutils"
-	"github.com/unionj-cloud/go-doudou/v2/toolkit/stringutils"
-	"github.com/unionj-cloud/go-doudou/v2/version"
+	"github.com/youminxue/v2/toolkit/astutils"
+	v3 "github.com/youminxue/v2/toolkit/openapi/v3"
+	"github.com/youminxue/v2/toolkit/sliceutils"
+	"github.com/youminxue/v2/toolkit/stringutils"
+	"github.com/youminxue/v2/version"
 	"golang.org/x/text/cases"
 	"golang.org/x/text/language"
 	"os"
@@ -185,7 +185,7 @@ package service
 import (
 	"context"
 	"{{.DtoPackage}}"
-	v3 "github.com/unionj-cloud/go-doudou/v2/toolkit/openapi/v3"
+	v3 "github.com/youminxue/v2/toolkit/openapi/v3"
 )
 
 //go:generate go-doudou svc http -c

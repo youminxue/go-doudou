@@ -2,7 +2,7 @@ package memberlist
 
 import (
 	"encoding/json"
-	"github.com/unionj-cloud/go-doudou/v2/toolkit/memberlist"
+	"github.com/youminxue/v2/toolkit/memberlist"
 	"testing"
 )
 

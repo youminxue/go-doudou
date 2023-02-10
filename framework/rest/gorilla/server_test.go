@@ -1,7 +1,7 @@
 package gorilla
 
 import (
-	"github.com/unionj-cloud/go-doudou/v2/framework/rest"
+	"github.com/youminxue/v2/framework/rest"
 	"testing"
 )
 

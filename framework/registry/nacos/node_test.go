@@ -6,13 +6,13 @@ import (
 	"github.com/pkg/errors"
 	. "github.com/smartystreets/goconvey/convey"
 	"github.com/stretchr/testify/require"
-	"github.com/unionj-cloud/go-doudou/v2/framework/buildinfo"
-	"github.com/unionj-cloud/go-doudou/v2/framework/internal/config"
-	"github.com/unionj-cloud/go-doudou/v2/framework/registry/nacos"
-	"github.com/unionj-cloud/go-doudou/v2/framework/registry/nacos/mock"
 	"github.com/wubin1989/nacos-sdk-go/v2/clients/naming_client"
 	"github.com/wubin1989/nacos-sdk-go/v2/model"
 	"github.com/wubin1989/nacos-sdk-go/v2/vo"
+	"github.com/youminxue/v2/framework/buildinfo"
+	"github.com/youminxue/v2/framework/internal/config"
+	"github.com/youminxue/v2/framework/registry/nacos"
+	"github.com/youminxue/v2/framework/registry/nacos/mock"
 	"testing"
 )
 

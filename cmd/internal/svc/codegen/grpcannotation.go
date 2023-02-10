@@ -2,14 +2,14 @@ package codegen
 
 import (
 	"bytes"
-	"github.com/unionj-cloud/go-doudou/v2/version"
+	"github.com/youminxue/v2/version"
 	"os"
 	"path/filepath"
 	"strings"
 	"text/template"
 
 	"github.com/sirupsen/logrus"
-	"github.com/unionj-cloud/go-doudou/v2/toolkit/astutils"
+	"github.com/youminxue/v2/toolkit/astutils"
 )
 
 var annotationTmpl = `/**
@@ -19,7 +19,7 @@ var annotationTmpl = `/**
 package grpc
 
 import (
-	"github.com/unionj-cloud/go-doudou/v2/framework"
+	"github.com/youminxue/v2/framework"
 )
 
 var MethodAnnotationStore = framework.AnnotationStore{

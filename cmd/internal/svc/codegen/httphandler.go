@@ -2,7 +2,7 @@ package codegen
 
 import (
 	"bytes"
-	"github.com/unionj-cloud/go-doudou/v2/version"
+	"github.com/youminxue/v2/version"
 	"os"
 	"path/filepath"
 	"strings"
@@ -10,7 +10,7 @@ import (
 
 	"github.com/iancoleman/strcase"
 	"github.com/sirupsen/logrus"
-	"github.com/unionj-cloud/go-doudou/v2/toolkit/astutils"
+	"github.com/youminxue/v2/toolkit/astutils"
 )
 
 var httpHandlerTmpl = `/**
@@ -20,8 +20,8 @@ var httpHandlerTmpl = `/**
 package httpsrv
 
 import (
-	"github.com/unionj-cloud/go-doudou/v2/framework/rest"
-	"github.com/unionj-cloud/go-doudou/v2/framework"
+	"github.com/youminxue/v2/framework/rest"
+	"github.com/youminxue/v2/framework"
 	"net/http"
 	"os"
 )

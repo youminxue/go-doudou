@@ -10,7 +10,7 @@ import (
 	time "time"
 
 	gomock "github.com/golang/mock/gomock"
-	memberlist "github.com/unionj-cloud/go-doudou/v2/toolkit/memberlist"
+	memberlist "github.com/youminxue/v2/toolkit/memberlist"
 )
 
 // MockIMemberlist is a mock of IMemberlist interface.

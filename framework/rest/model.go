@@ -4,7 +4,7 @@ import (
 	"bytes"
 	"encoding/json"
 	"github.com/pkg/errors"
-	logger "github.com/unionj-cloud/go-doudou/v2/toolkit/zlogger"
+	logger "github.com/youminxue/v2/toolkit/zlogger"
 	"io"
 	"io/ioutil"
 	"net/http"

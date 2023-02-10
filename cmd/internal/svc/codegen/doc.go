@@ -4,12 +4,6 @@ import (
 	"bytes"
 	"encoding/json"
 	"fmt"
-	"github.com/iancoleman/strcase"
-	"github.com/sirupsen/logrus"
-	"github.com/unionj-cloud/go-doudou/v2/toolkit/astutils"
-	"github.com/unionj-cloud/go-doudou/v2/toolkit/constants"
-	v3 "github.com/unionj-cloud/go-doudou/v2/toolkit/openapi/v3"
-	"github.com/unionj-cloud/go-doudou/v2/toolkit/stringutils"
 	"go/ast"
 	"go/parser"
 	"go/token"
@@ -20,6 +14,13 @@ import (
 	"strings"
 	"text/template"
 	"time"
+
+	"github.com/iancoleman/strcase"
+	"github.com/sirupsen/logrus"
+	"github.com/youminxue/v2/toolkit/astutils"
+	"github.com/youminxue/v2/toolkit/constants"
+	v3 "github.com/youminxue/v2/toolkit/openapi/v3"
+	"github.com/youminxue/v2/toolkit/stringutils"
 )
 
 func getSchemaNames(vofile string) []string {
@@ -329,7 +330,7 @@ func pathsOf(ic astutils.InterfaceCollector, routePatternStrategy int) map[strin
 
 var gofileTmpl = `package {{.SvcPackage}}
 
-import "github.com/unionj-cloud/go-doudou/v2/framework/rest"
+import "github.com/youminxue/v2/framework/rest"
 
 func init() {
 	rest.Oas = ` + "`" + `{{.Doc}}` + "`" + `

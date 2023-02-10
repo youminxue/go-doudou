@@ -1,8 +1,8 @@
 package cmd_test
 
 import (
-	"github.com/unionj-cloud/go-doudou/v2/cmd"
-	"github.com/unionj-cloud/go-doudou/v2/toolkit/astutils"
+	"github.com/youminxue/v2/cmd"
+	"github.com/youminxue/v2/toolkit/astutils"
 	"os"
 	"path/filepath"
 	"testing"

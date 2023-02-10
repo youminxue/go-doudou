@@ -7,8 +7,8 @@ import (
 	"github.com/jmoiron/sqlx"
 	"github.com/lithammer/shortuuid/v4"
 	"github.com/pkg/errors"
-	"github.com/unionj-cloud/go-doudou/v2/toolkit/caller"
-	"github.com/unionj-cloud/go-doudou/v2/toolkit/sqlext/logger"
+	"github.com/youminxue/v2/toolkit/caller"
+	"github.com/youminxue/v2/toolkit/sqlext/logger"
 	"time"
 )
 

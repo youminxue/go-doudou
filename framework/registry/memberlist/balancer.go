@@ -1,7 +1,7 @@
 package memberlist
 
 import (
-	"github.com/unionj-cloud/go-doudou/v2/toolkit/zlogger"
+	"github.com/youminxue/v2/toolkit/zlogger"
 	"sync"
 
 	"google.golang.org/grpc/balancer"

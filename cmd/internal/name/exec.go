@@ -3,8 +3,8 @@ package name
 import (
 	"github.com/iancoleman/strcase"
 	"github.com/pkg/errors"
-	"github.com/unionj-cloud/go-doudou/v2/toolkit/astutils"
-	"github.com/unionj-cloud/go-doudou/v2/toolkit/stringutils"
+	"github.com/youminxue/v2/toolkit/astutils"
+	"github.com/youminxue/v2/toolkit/stringutils"
 )
 
 // Name wraps config properties for name command

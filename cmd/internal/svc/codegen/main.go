@@ -3,8 +3,8 @@ package codegen
 import (
 	"bufio"
 	"github.com/sirupsen/logrus"
-	"github.com/unionj-cloud/go-doudou/v2/toolkit/astutils"
-	"github.com/unionj-cloud/go-doudou/v2/version"
+	"github.com/youminxue/v2/toolkit/astutils"
+	"github.com/youminxue/v2/version"
 	"os"
 	"path/filepath"
 	"strings"
@@ -18,7 +18,7 @@ var mainTmpl = `/**
 package main
 
 import (
-	"github.com/unionj-cloud/go-doudou/v2/framework/rest"
+	"github.com/youminxue/v2/framework/rest"
 	{{.ServiceAlias}} "{{.ServicePackage}}"
     "{{.ConfigPackage}}"
 	"{{.HttpPackage}}"

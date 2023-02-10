@@ -1,7 +1,7 @@
 package astutils
 
 import (
-	"github.com/unionj-cloud/go-doudou/v2/toolkit/pathutils"
+	"github.com/youminxue/v2/toolkit/pathutils"
 	"go/ast"
 	"go/parser"
 	"go/token"

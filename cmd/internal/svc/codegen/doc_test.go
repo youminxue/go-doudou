@@ -3,9 +3,9 @@ package codegen
 import (
 	"fmt"
 	. "github.com/smartystreets/goconvey/convey"
-	"github.com/unionj-cloud/go-doudou/v2/toolkit/astutils"
-	v3helper "github.com/unionj-cloud/go-doudou/v2/toolkit/openapi/v3"
-	"github.com/unionj-cloud/go-doudou/v2/toolkit/pathutils"
+	"github.com/youminxue/v2/toolkit/astutils"
+	v3helper "github.com/youminxue/v2/toolkit/openapi/v3"
+	"github.com/youminxue/v2/toolkit/pathutils"
 	"os"
 	"path/filepath"
 	"testing"

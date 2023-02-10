@@ -10,7 +10,7 @@ package memrate
 import (
 	"context"
 	. "github.com/smartystreets/goconvey/convey"
-	"github.com/unionj-cloud/go-doudou/v2/framework/ratelimit"
+	"github.com/youminxue/v2/framework/ratelimit"
 	"log"
 	"math"
 	"runtime"

@@ -7,7 +7,7 @@ package service
 import (
 	"context"
 	"testgensvcgo/dto"
-	v3 "github.com/unionj-cloud/go-doudou/v2/toolkit/openapi/v3"
+	v3 "github.com/youminxue/v2/toolkit/openapi/v3"
 )
 
 //go:generate go-doudou svc http -c

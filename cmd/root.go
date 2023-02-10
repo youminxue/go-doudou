@@ -3,7 +3,8 @@ package cmd
 import (
 	"github.com/sirupsen/logrus"
 	"github.com/spf13/cobra"
-	"github.com/unionj-cloud/go-doudou/v2/version"
+	"github.com/youminxue/v2/cmd/internal/svc/codegen"
+	"github.com/youminxue/v2/version"
 )
 
 // rootCmd is the base command when called without any subcommands
@@ -24,6 +25,7 @@ load balancing and so on. it just begins, more features will come out soon.`,
 // Execute adds all child commands to the root command and sets flags appropriately.
 // This is called by main.main(). It only needs to happen once to the rootCmd.
 func Execute() {
+	codegen.ParseDto("/Users/hetao/code/golang/src/git.corp.hetao101.com/backend/test1/", "dto")
 	cobra.CheckErr(rootCmd.Execute())
 }
 

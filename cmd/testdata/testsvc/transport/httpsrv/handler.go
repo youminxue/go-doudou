@@ -7,7 +7,7 @@ package httpsrv
 import (
 	"net/http"
 
-	"github.com/unionj-cloud/go-doudou/v2/framework/rest"
+	"github.com/youminxue/v2/framework/rest"
 )
 
 type TestsvcHandler interface {

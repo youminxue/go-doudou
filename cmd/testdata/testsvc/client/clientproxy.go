@@ -14,7 +14,7 @@ import (
 	"github.com/slok/goresilience/metrics"
 	"github.com/slok/goresilience/retry"
 	"github.com/slok/goresilience/timeout"
-	"github.com/unionj-cloud/go-doudou/v2/svc/config"
+	"github.com/youminxue/v2/svc/config"
 )
 
 type TestsvcClientProxy struct {

@@ -2,7 +2,7 @@ package codegen
 
 import (
 	"github.com/stretchr/testify/assert"
-	"github.com/unionj-cloud/go-doudou/v2/cmd/internal/executils"
+	"github.com/youminxue/v2/cmd/internal/executils"
 	"os"
 	"path/filepath"
 	"testing"

@@ -3,7 +3,7 @@ package astutils
 import (
 	"fmt"
 	"github.com/iancoleman/strcase"
-	"github.com/unionj-cloud/go-doudou/v2/toolkit/pathutils"
+	"github.com/youminxue/v2/toolkit/pathutils"
 	"testing"
 )
 

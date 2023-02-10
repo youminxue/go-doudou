@@ -3,7 +3,7 @@ package memberlist
 import (
 	"github.com/stretchr/testify/assert"
 	"github.com/stretchr/testify/require"
-	"github.com/unionj-cloud/go-doudou/v2/toolkit/memberlist"
+	"github.com/youminxue/v2/toolkit/memberlist"
 	"sync"
 	"testing"
 )

@@ -1,4 +1,4 @@
-module github.com/unionj-cloud/go-doudou/v2
+module github.com/youminxue/v2
 
 go 1.16
 

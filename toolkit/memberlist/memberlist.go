@@ -18,7 +18,7 @@ import (
 	"container/list"
 	"errors"
 	"fmt"
-	"github.com/unionj-cloud/go-doudou/v2/toolkit/stringutils"
+	"github.com/youminxue/v2/toolkit/stringutils"
 	"log"
 	"net"
 	"os"

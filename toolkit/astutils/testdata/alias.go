@@ -1,7 +1,7 @@
 package main
 
 import (
-	"github.com/unionj-cloud/go-doudou/v2/esutils"
+	"github.com/youminxue/v2/esutils"
 	"time"
 )
 

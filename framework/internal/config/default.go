@@ -1,6 +1,6 @@
 package config
 
-import "github.com/unionj-cloud/go-doudou/v2/framework/configmgr"
+import "github.com/youminxue/v2/framework/configmgr"
 
 const FrameworkName = "go-doudou"
 

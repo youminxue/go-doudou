@@ -2,8 +2,8 @@ package codegen
 
 import (
 	"github.com/stretchr/testify/assert"
-	v3 "github.com/unionj-cloud/go-doudou/v2/toolkit/openapi/v3"
-	"github.com/unionj-cloud/go-doudou/v2/toolkit/pathutils"
+	v3 "github.com/youminxue/v2/toolkit/openapi/v3"
+	"github.com/youminxue/v2/toolkit/pathutils"
 	"path"
 	"path/filepath"
 	"strings"

@@ -3,8 +3,8 @@ package codegen
 import (
 	"bytes"
 	"github.com/sirupsen/logrus"
-	"github.com/unionj-cloud/go-doudou/v2/toolkit/astutils"
-	"github.com/unionj-cloud/go-doudou/v2/version"
+	"github.com/youminxue/v2/toolkit/astutils"
+	"github.com/youminxue/v2/version"
 	"io/ioutil"
 	"os"
 	"path/filepath"

@@ -4,9 +4,9 @@ import (
 	"bufio"
 	"bytes"
 	"github.com/sirupsen/logrus"
-	"github.com/unionj-cloud/go-doudou/v2/toolkit/astutils"
-	"github.com/unionj-cloud/go-doudou/v2/toolkit/copier"
-	"github.com/unionj-cloud/go-doudou/v2/version"
+	"github.com/youminxue/v2/toolkit/astutils"
+	"github.com/youminxue/v2/toolkit/copier"
+	"github.com/youminxue/v2/version"
 	"os"
 	"path/filepath"
 	"strings"
@@ -24,7 +24,7 @@ import (
 	"github.com/go-resty/resty/v2"
 	"{{.VoPackage}}"
 	"{{.DtoPackage}}"
-	v3 "github.com/unionj-cloud/go-doudou/v2/toolkit/openapi/v3"
+	v3 "github.com/youminxue/v2/toolkit/openapi/v3"
 	"os"
 )
 

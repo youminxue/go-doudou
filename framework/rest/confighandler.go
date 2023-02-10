@@ -2,7 +2,7 @@ package rest
 
 import (
 	"fmt"
-	"github.com/unionj-cloud/go-doudou/v2/toolkit/stringutils"
+	"github.com/youminxue/v2/toolkit/stringutils"
 	"net/http"
 	"os"
 	"strings"

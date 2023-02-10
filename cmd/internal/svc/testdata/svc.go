@@ -2,8 +2,8 @@ package service
 
 import (
 	"context"
-	"github.com/unionj-cloud/go-doudou/v2/cmd/internal/svc/testdata/vo"
-	v3 "github.com/unionj-cloud/go-doudou/v2/toolkit/openapi/v3"
+	"github.com/youminxue/v2/cmd/internal/svc/testdata/vo"
+	v3 "github.com/youminxue/v2/toolkit/openapi/v3"
 	"mime/multipart"
 	"os"
 )

@@ -7,12 +7,12 @@ import (
 	"github.com/golang/mock/gomock"
 	"github.com/pkg/errors"
 	. "github.com/smartystreets/goconvey/convey"
-	"github.com/unionj-cloud/go-doudou/v2/framework/configmgr"
-	"github.com/unionj-cloud/go-doudou/v2/framework/configmgr/mock"
-	"github.com/unionj-cloud/go-doudou/v2/framework/internal/config"
 	"github.com/wubin1989/nacos-sdk-go/v2/clients/cache"
 	"github.com/wubin1989/nacos-sdk-go/v2/clients/config_client"
 	"github.com/wubin1989/nacos-sdk-go/v2/vo"
+	"github.com/youminxue/v2/framework/configmgr"
+	"github.com/youminxue/v2/framework/configmgr/mock"
+	"github.com/youminxue/v2/framework/internal/config"
 	"testing"
 )
 

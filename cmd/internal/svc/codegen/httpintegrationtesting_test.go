@@ -2,7 +2,7 @@ package codegen
 
 import (
 	"fmt"
-	"github.com/unionj-cloud/go-doudou/v2/toolkit/fileutils"
+	"github.com/youminxue/v2/toolkit/fileutils"
 	"path/filepath"
 	"testing"
 )

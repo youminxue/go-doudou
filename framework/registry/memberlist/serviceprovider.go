@@ -3,9 +3,9 @@ package memberlist
 import (
 	"context"
 	"fmt"
-	"github.com/unionj-cloud/go-doudou/v2/toolkit/memberlist"
-	"github.com/unionj-cloud/go-doudou/v2/toolkit/stringutils"
-	logger "github.com/unionj-cloud/go-doudou/v2/toolkit/zlogger"
+	"github.com/youminxue/v2/toolkit/memberlist"
+	"github.com/youminxue/v2/toolkit/stringutils"
+	logger "github.com/youminxue/v2/toolkit/zlogger"
 	"google.golang.org/grpc"
 	"sync"
 	"sync/atomic"

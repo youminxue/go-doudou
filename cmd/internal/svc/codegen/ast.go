@@ -3,7 +3,7 @@ package codegen
 import (
 	"encoding/json"
 	"fmt"
-	"github.com/unionj-cloud/go-doudou/v2/toolkit/astutils"
+	"github.com/youminxue/v2/toolkit/astutils"
 	"go/ast"
 	"strings"
 )

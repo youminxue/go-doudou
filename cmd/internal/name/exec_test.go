@@ -2,7 +2,7 @@ package name
 
 import (
 	"github.com/stretchr/testify/assert"
-	"github.com/unionj-cloud/go-doudou/v2/toolkit/pathutils"
+	"github.com/youminxue/v2/toolkit/pathutils"
 	"io/ioutil"
 	"os"
 	"testing"

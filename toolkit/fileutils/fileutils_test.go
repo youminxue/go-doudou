@@ -1,7 +1,7 @@
 package fileutils
 
 import (
-	"github.com/unionj-cloud/go-doudou/v2/toolkit/pathutils"
+	"github.com/youminxue/v2/toolkit/pathutils"
 	"os"
 	"testing"
 )

@@ -7,9 +7,9 @@ import (
 	_ "github.com/go-sql-driver/mysql"
 	"github.com/jmoiron/sqlx"
 	"github.com/stretchr/testify/assert"
-	"github.com/unionj-cloud/go-doudou/v2/cmd/internal/ddl/columnenum"
-	"github.com/unionj-cloud/go-doudou/v2/cmd/internal/ddl/sortenum"
-	"github.com/unionj-cloud/go-doudou/v2/toolkit/sqlext/wrapper"
+	"github.com/youminxue/v2/cmd/internal/ddl/columnenum"
+	"github.com/youminxue/v2/cmd/internal/ddl/sortenum"
+	"github.com/youminxue/v2/toolkit/sqlext/wrapper"
 	"reflect"
 	"testing"
 )

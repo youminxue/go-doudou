@@ -2,8 +2,8 @@ package redisrate
 
 import (
 	"context"
-	logger "github.com/unionj-cloud/go-doudou/v2/toolkit/zlogger"
-	"github.com/unionj-cloud/go-doudou/v2/framework/ratelimit"
+	"github.com/youminxue/v2/framework/ratelimit"
+	logger "github.com/youminxue/v2/toolkit/zlogger"
 	"strconv"
 	"time"
 

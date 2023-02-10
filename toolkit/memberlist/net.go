@@ -5,7 +5,7 @@ import (
 	"bytes"
 	"encoding/binary"
 	"fmt"
-	"github.com/unionj-cloud/go-doudou/v2/toolkit/stringutils"
+	"github.com/youminxue/v2/toolkit/stringutils"
 	"hash/crc32"
 	"io"
 	"net"

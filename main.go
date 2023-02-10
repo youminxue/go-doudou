@@ -21,7 +21,9 @@ THE SOFTWARE.
 */
 package main
 
-import "github.com/unionj-cloud/go-doudou/v2/cmd"
+import (
+	"github.com/youminxue/v2/cmd"
+)
 
 func main() {
 	cmd.Execute()

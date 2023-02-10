@@ -3,7 +3,7 @@ package query
 import (
 	"fmt"
 	"github.com/stretchr/testify/require"
-	"github.com/unionj-cloud/go-doudou/v2/toolkit/sqlext/sortenum"
+	"github.com/youminxue/v2/toolkit/sqlext/sortenum"
 	"testing"
 )
 

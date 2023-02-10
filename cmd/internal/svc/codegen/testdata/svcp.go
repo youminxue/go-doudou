@@ -2,7 +2,7 @@ package service
 
 import (
 	"context"
-	v3 "github.com/unionj-cloud/go-doudou/v2/toolkit/openapi/v3"
+	v3 "github.com/youminxue/v2/toolkit/openapi/v3"
 	"mime/multipart"
 	"os"
 	"testdata/vo"
@@ -17,9 +17,9 @@ type UsersvcPanic interface {
 	// comment1
 	// comment2
 	GetUser(ctx context.Context,
-	// 用户ID
+		// 用户ID
 		userId string,
-	// 图片地址
+		// 图片地址
 		photo string,
 	) (code int, data string, msg error)
 

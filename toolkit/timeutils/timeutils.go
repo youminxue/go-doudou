@@ -4,7 +4,7 @@ import (
 	"context"
 	"github.com/hyperjumptech/jiffy"
 	"github.com/pkg/errors"
-	"github.com/unionj-cloud/go-doudou/v2/toolkit/stringutils"
+	"github.com/youminxue/v2/toolkit/stringutils"
 	"time"
 )
 

@@ -1,7 +1,7 @@
 package codegen
 
 import (
-	"github.com/unionj-cloud/go-doudou/v2/toolkit/astutils"
+	"github.com/youminxue/v2/toolkit/astutils"
 	"path/filepath"
 	"testing"
 )

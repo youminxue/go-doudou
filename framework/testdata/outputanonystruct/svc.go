@@ -2,7 +2,7 @@ package service
 
 import (
 	"context"
-	"github.com/unionj-cloud/go-doudou/v2/framework/testdata/vo"
+	"github.com/youminxue/v2/framework/testdata/vo"
 )
 
 // 用户服务接口

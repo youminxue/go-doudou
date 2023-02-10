@@ -22,5 +22,5 @@ require (
 	github.com/prometheus/client_golang v1.11.0
 	google.golang.org/grpc v1.38.0
 	google.golang.org/protobuf v1.26.0
-	github.com/unionj-cloud/go-doudou/v2 v2.0.4
+	github.com/youminxue/v2 v2.0.4
 )

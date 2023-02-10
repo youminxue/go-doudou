@@ -6,14 +6,14 @@ import (
 	"github.com/pkg/errors"
 	"github.com/radovskyb/watcher"
 	"github.com/sirupsen/logrus"
-	"github.com/unionj-cloud/go-doudou/v2/cmd/internal/executils"
-	"github.com/unionj-cloud/go-doudou/v2/cmd/internal/openapi/v3/codegen/client"
-	"github.com/unionj-cloud/go-doudou/v2/cmd/internal/openapi/v3/codegen/server"
-	v3 "github.com/unionj-cloud/go-doudou/v2/cmd/internal/protobuf/v3"
-	"github.com/unionj-cloud/go-doudou/v2/cmd/internal/svc/codegen"
-	"github.com/unionj-cloud/go-doudou/v2/toolkit/astutils"
-	v3helper "github.com/unionj-cloud/go-doudou/v2/toolkit/openapi/v3"
-	"github.com/unionj-cloud/go-doudou/v2/toolkit/stringutils"
+	"github.com/youminxue/v2/cmd/internal/executils"
+	"github.com/youminxue/v2/cmd/internal/openapi/v3/codegen/client"
+	"github.com/youminxue/v2/cmd/internal/openapi/v3/codegen/server"
+	v3 "github.com/youminxue/v2/cmd/internal/protobuf/v3"
+	"github.com/youminxue/v2/cmd/internal/svc/codegen"
+	"github.com/youminxue/v2/toolkit/astutils"
+	v3helper "github.com/youminxue/v2/toolkit/openapi/v3"
+	"github.com/youminxue/v2/toolkit/stringutils"
 	"os"
 	"os/exec"
 	"os/user"
@@ -483,8 +483,8 @@ func (receiver *Svc) Run(watch bool) {
 
 // Upgrade upgrades go-doudou to latest release version
 func (receiver *Svc) Upgrade(version string) {
-	fmt.Printf("go install -v github.com/unionj-cloud/go-doudou/v2@%s\n", version)
-	if err := receiver.runner.Run("go", "install", "-v", fmt.Sprintf("github.com/unionj-cloud/go-doudou/v2@%s", version)); err != nil {
+	fmt.Printf("go install -v github.com/youminxue/v2@%s\n", version)
+	if err := receiver.runner.Run("go", "install", "-v", fmt.Sprintf("github.com/youminxue/v2@%s", version)); err != nil {
 		panic(err)
 	}
 }

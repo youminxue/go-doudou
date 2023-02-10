@@ -1,7 +1,7 @@
 package grpc_resolver_nacos
 
 import (
-	"github.com/unionj-cloud/go-doudou/v2/toolkit/zlogger"
+	"github.com/youminxue/v2/toolkit/zlogger"
 	"math/rand"
 	"sort"
 	"sync"

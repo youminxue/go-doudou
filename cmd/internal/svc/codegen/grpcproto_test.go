@@ -3,8 +3,8 @@ package codegen
 import (
 	"fmt"
 	"github.com/iancoleman/strcase"
-	v3 "github.com/unionj-cloud/go-doudou/v2/cmd/internal/protobuf/v3"
-	"github.com/unionj-cloud/go-doudou/v2/toolkit/astutils"
+	v3 "github.com/youminxue/v2/cmd/internal/protobuf/v3"
+	"github.com/youminxue/v2/toolkit/astutils"
 	"path/filepath"
 	"testing"
 )

@@ -3,9 +3,9 @@ package grpcx_ratelimit
 import (
 	"context"
 	grpc_middleware "github.com/grpc-ecosystem/go-grpc-middleware"
-	"github.com/unionj-cloud/go-doudou/v2/framework/ratelimit"
-	"github.com/unionj-cloud/go-doudou/v2/framework/ratelimit/memrate"
-	"github.com/unionj-cloud/go-doudou/v2/framework/ratelimit/redisrate"
+	"github.com/youminxue/v2/framework/ratelimit"
+	"github.com/youminxue/v2/framework/ratelimit/memrate"
+	"github.com/youminxue/v2/framework/ratelimit/redisrate"
 	"google.golang.org/grpc"
 	"google.golang.org/grpc/codes"
 	"google.golang.org/grpc/status"
