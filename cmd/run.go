@@ -1,7 +1,7 @@
 package cmd
 
 import (
-	"github.com/youminxue/v2/cmd/internal/svc"
+	"github.com/youminxue/odin/cmd/internal/svc"
 
 	"github.com/spf13/cobra"
 )
@@ -13,7 +13,7 @@ var RunSvc = svc.NewSvc
 // runCmd runs the service
 var runCmd = &cobra.Command{
 	Use:   "run",
-	Short: "run go-doudou program",
+	Short: "run odin program",
 	Long:  ``,
 	Run: func(cmd *cobra.Command, args []string) {
 		s := RunSvc("")

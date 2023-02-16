@@ -3,7 +3,7 @@ package rest_test
 import (
 	"github.com/pkg/errors"
 	. "github.com/smartystreets/goconvey/convey"
-	"github.com/youminxue/v2/framework/rest"
+	"github.com/youminxue/odin/framework/rest"
 	"testing"
 )
 

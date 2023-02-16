@@ -18,7 +18,7 @@ import (
 	"container/list"
 	"errors"
 	"fmt"
-	"github.com/youminxue/v2/toolkit/stringutils"
+	"github.com/youminxue/odin/toolkit/stringutils"
 	"log"
 	"net"
 	"os"

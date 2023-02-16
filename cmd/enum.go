@@ -2,7 +2,7 @@ package cmd
 
 import (
 	"github.com/spf13/cobra"
-	"github.com/youminxue/v2/cmd/internal/enum"
+	"github.com/youminxue/odin/cmd/internal/enum"
 )
 
 // enumCmd updates json tag of struct fields

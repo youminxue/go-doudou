@@ -2,10 +2,10 @@ package query
 
 import (
 	"fmt"
-	"github.com/youminxue/v2/toolkit/sqlext/arithsymbol"
-	"github.com/youminxue/v2/toolkit/sqlext/logicsymbol"
-	"github.com/youminxue/v2/toolkit/sqlext/sortenum"
-	"github.com/youminxue/v2/toolkit/stringutils"
+	"github.com/youminxue/odin/toolkit/sqlext/arithsymbol"
+	"github.com/youminxue/odin/toolkit/sqlext/logicsymbol"
+	"github.com/youminxue/odin/toolkit/sqlext/sortenum"
+	"github.com/youminxue/odin/toolkit/stringutils"
 	"reflect"
 	"strings"
 )

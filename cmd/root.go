@@ -3,16 +3,16 @@ package cmd
 import (
 	"github.com/sirupsen/logrus"
 	"github.com/spf13/cobra"
-	"github.com/youminxue/v2/cmd/internal/svc/codegen"
-	"github.com/youminxue/v2/version"
+	"github.com/youminxue/odin/cmd/internal/svc/codegen"
+	"github.com/youminxue/odin/version"
 )
 
 // rootCmd is the base command when called without any subcommands
 var rootCmd = &cobra.Command{
 	Version: version.Release,
-	Use:     "go-doudou",
-	Short:   "go-doudou is microservice rapid develop framework based on openapi 3.0 spec and gossip protocol",
-	Long: `go-doudou works like a scaffolding tool but more than that. 
+	Use:     "odin",
+	Short:   "odin is microservice rapid develop framework based on openapi 3.0 spec and gossip protocol",
+	Long: `odin works like a scaffolding tool but more than that. 
 it lets api providers design their apis and help them code less. 
 it generates openapi 3.0 spec json document for frontend developers or other api consumers to understand what apis there, 
 consumers can import it into postman to debug and test, or upload it into some code generators to download client sdk.

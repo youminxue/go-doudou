@@ -10,9 +10,9 @@ import (
 	"github.com/wubin1989/nacos-sdk-go/v2/clients/cache"
 	"github.com/wubin1989/nacos-sdk-go/v2/clients/config_client"
 	"github.com/wubin1989/nacos-sdk-go/v2/vo"
-	"github.com/youminxue/v2/framework/configmgr"
-	"github.com/youminxue/v2/framework/configmgr/mock"
-	"github.com/youminxue/v2/framework/internal/config"
+	"github.com/youminxue/odin/framework/configmgr"
+	"github.com/youminxue/odin/framework/configmgr/mock"
+	"github.com/youminxue/odin/framework/internal/config"
 	"testing"
 )
 

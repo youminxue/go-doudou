@@ -2,7 +2,7 @@ package vo
 
 import "encoding/json"
 
-//go:generate go-doudou name --file $GOFILE -o
+//go:generate odin name --file $GOFILE -o
 
 type KeyboardLayout int
 

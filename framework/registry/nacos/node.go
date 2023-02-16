@@ -8,15 +8,15 @@ import (
 	"github.com/wubin1989/nacos-sdk-go/v2/clients/naming_client"
 	"github.com/wubin1989/nacos-sdk-go/v2/model"
 	"github.com/wubin1989/nacos-sdk-go/v2/vo"
-	"github.com/youminxue/v2/framework/buildinfo"
-	"github.com/youminxue/v2/framework/grpcx/grpc_resolver_nacos"
-	"github.com/youminxue/v2/framework/internal/config"
-	cons "github.com/youminxue/v2/framework/registry/constants"
-	"github.com/youminxue/v2/framework/registry/utils"
-	"github.com/youminxue/v2/toolkit/cast"
-	"github.com/youminxue/v2/toolkit/constants"
-	"github.com/youminxue/v2/toolkit/stringutils"
-	logger "github.com/youminxue/v2/toolkit/zlogger"
+	"github.com/youminxue/odin/framework/buildinfo"
+	"github.com/youminxue/odin/framework/grpcx/grpc_resolver_nacos"
+	"github.com/youminxue/odin/framework/internal/config"
+	cons "github.com/youminxue/odin/framework/registry/constants"
+	"github.com/youminxue/odin/framework/registry/utils"
+	"github.com/youminxue/odin/toolkit/cast"
+	"github.com/youminxue/odin/toolkit/constants"
+	"github.com/youminxue/odin/toolkit/stringutils"
+	logger "github.com/youminxue/odin/toolkit/zlogger"
 	"google.golang.org/grpc"
 	"runtime"
 	"sort"
@@ -34,7 +34,7 @@ func InitialiseNacosNamingClient() {
 	var err error
 	NamingClient, err = NewNamingClient(config.GetNacosClientParam())
 	if err != nil {
-		logger.Panic().Err(err).Msg("[go-doudou] failed to create nacos discovery client")
+		logger.Panic().Err(err).Msg("[odin] failed to create nacos discovery client")
 	}
 }
 
@@ -87,10 +87,10 @@ func NewRest(data ...map[string]interface{}) {
 		Ephemeral:   true,
 	})
 	if err != nil {
-		panic(errors.Errorf("[go-doudou] %s failed to register to nacos server: %s", service, err))
+		panic(errors.Errorf("[odin] %s failed to register to nacos server: %s", service, err))
 	}
 	if success {
-		logger.Info().Msgf("[go-doudou] %s registered to nacos server successfully", service)
+		logger.Info().Msgf("[odin] %s registered to nacos server successfully", service)
 	}
 }
 
@@ -138,10 +138,10 @@ func NewGrpc(data ...map[string]interface{}) {
 		Ephemeral:   true,
 	})
 	if err != nil {
-		panic(errors.Errorf("[go-doudou] %s failed to register to nacos server: %s", service, err))
+		panic(errors.Errorf("[odin] %s failed to register to nacos server: %s", service, err))
 	}
 	if success {
-		logger.Info().Msgf("[go-doudou] %s registered to nacos server successfully", service)
+		logger.Info().Msgf("[odin] %s registered to nacos server successfully", service)
 	}
 }
 
@@ -157,14 +157,14 @@ func ShutdownRest() {
 			Ephemeral:   true,
 		})
 		if err != nil {
-			logger.Error().Err(err).Msgf("[go-doudou] failed to deregister %s from nacos server", service)
+			logger.Error().Err(err).Msgf("[odin] failed to deregister %s from nacos server", service)
 			return
 		}
 		if !success {
-			logger.Error().Msgf("[go-doudou] failed to deregister %s from nacos server", service)
+			logger.Error().Msgf("[odin] failed to deregister %s from nacos server", service)
 			return
 		}
-		logger.Info().Msgf("[go-doudou] deregistered %s from nacos server successfully", service)
+		logger.Info().Msgf("[odin] deregistered %s from nacos server successfully", service)
 	}
 }
 
@@ -180,14 +180,14 @@ func ShutdownGrpc() {
 			Ephemeral:   true,
 		})
 		if err != nil {
-			logger.Error().Err(err).Msgf("[go-doudou] failed to deregister %s from nacos server", service)
+			logger.Error().Err(err).Msgf("[odin] failed to deregister %s from nacos server", service)
 			return
 		}
 		if !success {
-			logger.Error().Msgf("[go-doudou] failed to deregister %s from nacos server", service)
+			logger.Error().Msgf("[odin] failed to deregister %s from nacos server", service)
 			return
 		}
-		logger.Info().Msgf("[go-doudou] deregistered %s from nacos server successfully", service)
+		logger.Info().Msgf("[odin] deregistered %s from nacos server successfully", service)
 	}
 }
 
@@ -198,7 +198,7 @@ func CloseNamingClient() {
 		if NamingClient != nil {
 			NamingClient.CloseClient()
 			NamingClient = nil
-			logger.Info().Msg("[go-doudou] nacos naming client closed")
+			logger.Info().Msg("[odin] nacos naming client closed")
 		}
 	})
 }
@@ -274,7 +274,7 @@ func (n *RRServiceProvider) SelectServer() string {
 	n.lock.Lock()
 	defer n.lock.Unlock()
 	if n.namingClient == nil {
-		logger.Error().Msg("[go-doudou] nacos discovery client has not been initialized")
+		logger.Error().Msg("[odin] nacos discovery client has not been initialized")
 		return ""
 	}
 	instances, err := n.namingClient.SelectInstances(vo.SelectInstancesParam{
@@ -284,11 +284,11 @@ func (n *RRServiceProvider) SelectServer() string {
 		HealthyOnly: true,
 	})
 	if err != nil {
-		logger.Error().Err(err).Msgf("[go-doudou] %s server not found", n.serviceName)
+		logger.Error().Err(err).Msgf("[odin] %s server not found", n.serviceName)
 		return ""
 	}
 	if len(instances) == 0 {
-		logger.Error().Msgf("[go-doudou] %s server not found", n.serviceName)
+		logger.Error().Msgf("[odin] %s server not found", n.serviceName)
 		return ""
 	}
 	sort.Sort(instance(instances))
@@ -325,7 +325,7 @@ func (n *WRRServiceProvider) SelectServer() string {
 	n.lock.Lock()
 	defer n.lock.Unlock()
 	if n.namingClient == nil {
-		logger.Error().Msg("[go-doudou] nacos discovery client has not been initialized")
+		logger.Error().Msg("[odin] nacos discovery client has not been initialized")
 		return ""
 	}
 	instance, err := n.namingClient.SelectOneHealthyInstance(vo.SelectOneHealthInstanceParam{
@@ -334,7 +334,7 @@ func (n *WRRServiceProvider) SelectServer() string {
 		GroupName:   n.groupName,
 	})
 	if err != nil {
-		logger.Error().Err(err).Msgf("[go-doudou] %s server not found", n.serviceName)
+		logger.Error().Err(err).Msgf("[odin] %s server not found", n.serviceName)
 		return ""
 	}
 	return fmt.Sprintf("http://%s:%d%s", instance.Ip, instance.Port, instance.Metadata["rootPath"])
@@ -388,7 +388,7 @@ func NewGrpcClientConn(config NacosConfig, lb string, dialOptions ...grpc.DialOp
 	defer cancel()
 	grpcConn, err := grpc.DialContext(ctx, serverAddr, dialOptions...)
 	if err != nil {
-		logger.Panic().Err(err).Msgf("[go-doudou] failed to connect to server %s", serverAddr)
+		logger.Panic().Err(err).Msgf("[odin] failed to connect to server %s", serverAddr)
 	}
 	return grpcConn
 }

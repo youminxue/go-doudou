@@ -14,10 +14,10 @@ import (
 	"github.com/slok/goresilience"
 	"github.com/slok/goresilience/bulkhead"
 	"github.com/uber/jaeger-client-go"
-	"github.com/youminxue/v2/framework/configmgr"
-	"github.com/youminxue/v2/framework/internal/config"
-	"github.com/youminxue/v2/toolkit/stringutils"
-	logger "github.com/youminxue/v2/toolkit/zlogger"
+	"github.com/youminxue/odin/framework/configmgr"
+	"github.com/youminxue/odin/framework/internal/config"
+	"github.com/youminxue/odin/toolkit/stringutils"
+	logger "github.com/youminxue/odin/toolkit/zlogger"
 	"io"
 	"net/http"
 	"net/http/httptest"
@@ -96,7 +96,7 @@ func InitialiseRemoteConfigListener() {
 	case config.ApolloConfigType:
 		configmgr.ApolloClient.AddChangeListener(listener)
 	default:
-		logger.Warn().Msgf("[go-doudou] unknown config type: %s\n", configType)
+		logger.Warn().Msgf("[odin] unknown config type: %s\n", configType)
 	}
 }
 

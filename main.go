@@ -22,7 +22,7 @@ THE SOFTWARE.
 package main
 
 import (
-	"github.com/youminxue/v2/cmd"
+	"github.com/youminxue/odin/cmd"
 )
 
 func main() {

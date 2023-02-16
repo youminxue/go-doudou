@@ -11,7 +11,7 @@ func promRoutes() []Route {
 		{
 			Name:        "Prometheus",
 			Method:      "GET",
-			Pattern:     "/go-doudou/prometheus",
+			Pattern:     "/odin/prometheus",
 			HandlerFunc: promhttp.Handler().ServeHTTP,
 		},
 	}

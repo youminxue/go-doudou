@@ -2,7 +2,7 @@ package service
 
 import (
 	"context"
-	"github.com/youminxue/v2/framework/testdata/vo"
+	"github.com/youminxue/odin/framework/testdata/vo"
 )
 
 // 用户服务接口

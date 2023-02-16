@@ -1,7 +1,7 @@
 package vo
 
-//go:generate go-doudou name --file $GOFILE
-//go:generate go-doudou enum --file $GOFILE
+//go:generate odin name --file $GOFILE
+//go:generate odin enum --file $GOFILE
 
 type PageFilter struct {
 	// 真实姓名，前缀匹配

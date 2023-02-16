@@ -3,8 +3,8 @@ package cmd_test
 import (
 	"bytes"
 	"github.com/spf13/cobra"
-	"github.com/youminxue/v2/cmd/internal/svc"
-	"github.com/youminxue/v2/toolkit/pathutils"
+	"github.com/youminxue/odin/cmd/internal/svc"
+	"github.com/youminxue/odin/toolkit/pathutils"
 	"os"
 	"os/exec"
 )

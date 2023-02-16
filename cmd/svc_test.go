@@ -2,7 +2,7 @@ package cmd_test
 
 import (
 	. "github.com/smartystreets/goconvey/convey"
-	"github.com/youminxue/v2/cmd"
+	"github.com/youminxue/odin/cmd"
 	"testing"
 )
 

@@ -2,7 +2,7 @@ package rest
 
 import (
 	"fmt"
-	"github.com/youminxue/v2/toolkit/stringutils"
+	"github.com/youminxue/odin/toolkit/stringutils"
 	"net/http"
 	"os"
 	"strings"
@@ -15,7 +15,7 @@ func configRoutes() []Route {
 		{
 			Name:    "GetConfig",
 			Method:  "GET",
-			Pattern: "/go-doudou/config",
+			Pattern: "/odin/config",
 			HandlerFunc: func(_writer http.ResponseWriter, _req *http.Request) {
 				pre := _req.FormValue("pre")
 				var builder strings.Builder

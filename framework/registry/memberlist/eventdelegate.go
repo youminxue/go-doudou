@@ -1,7 +1,7 @@
 package memberlist
 
 import (
-	"github.com/youminxue/v2/toolkit/memberlist"
+	"github.com/youminxue/odin/toolkit/memberlist"
 )
 
 type eventDelegate struct {

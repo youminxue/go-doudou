@@ -4,9 +4,9 @@ import (
 	"github.com/go-resty/resty/v2"
 	. "github.com/smartystreets/goconvey/convey"
 	"github.com/wubin1989/nacos-sdk-go/v2/common/constant"
-	"github.com/youminxue/v2/framework/internal/config"
-	"github.com/youminxue/v2/framework/registry"
-	"github.com/youminxue/v2/framework/restclient"
+	"github.com/youminxue/odin/framework/internal/config"
+	"github.com/youminxue/odin/framework/registry"
+	"github.com/youminxue/odin/framework/restclient"
 	"os"
 	"testing"
 )

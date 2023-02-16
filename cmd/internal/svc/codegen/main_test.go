@@ -3,7 +3,7 @@ package codegen
 import (
 	"github.com/pkg/errors"
 	. "github.com/smartystreets/goconvey/convey"
-	"github.com/youminxue/v2/toolkit/astutils"
+	"github.com/youminxue/odin/toolkit/astutils"
 	"os"
 	"path/filepath"
 	"testing"

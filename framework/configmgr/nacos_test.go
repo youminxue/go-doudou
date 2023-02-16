@@ -9,10 +9,10 @@ import (
 	"github.com/wubin1989/nacos-sdk-go/v2/clients/config_client"
 	"github.com/wubin1989/nacos-sdk-go/v2/util"
 	"github.com/wubin1989/nacos-sdk-go/v2/vo"
-	"github.com/youminxue/v2/framework/configmgr"
-	"github.com/youminxue/v2/framework/configmgr/mock"
-	"github.com/youminxue/v2/framework/internal/config"
-	"github.com/youminxue/v2/toolkit/stringutils"
+	"github.com/youminxue/odin/framework/configmgr"
+	"github.com/youminxue/odin/framework/configmgr/mock"
+	"github.com/youminxue/odin/framework/internal/config"
+	"github.com/youminxue/odin/toolkit/stringutils"
 	"io"
 	"strings"
 	"testing"
@@ -148,7 +148,7 @@ func TestNacosConfigMgr_CallbackOnChange_Yaml(t *testing.T) {
 				So(len(event.Changes), ShouldEqual, 2)
 			},
 		})
-		nacosClient.CallbackOnChange(config.DefaultGddNacosNamespaceId, config.DefaultGddNacosConfigGroup, dataId, "gdd:\n  port: 6060\n  tracing:\n    metrics:\n      root: \"go-doudou\"", "")
+		nacosClient.CallbackOnChange(config.DefaultGddNacosNamespaceId, config.DefaultGddNacosConfigGroup, dataId, "gdd:\n  port: 6060\n  tracing:\n    metrics:\n      root: \"odin\"", "")
 	})
 }
 
@@ -175,7 +175,7 @@ func TestNacosConfigMgr_CallbackOnChange_Yaml_Error(t *testing.T) {
 		configmgr.StringReader = func(s string) io.Reader {
 			return ErrReader(errors.New("mock read error"))
 		}
-		nacosClient.CallbackOnChange(config.DefaultGddNacosNamespaceId, config.DefaultGddNacosConfigGroup, dataId, "gdd:\n  port: 6060\n  tracing:\n    metrics:\n      root: \"go-doudou\"", "")
+		nacosClient.CallbackOnChange(config.DefaultGddNacosNamespaceId, config.DefaultGddNacosConfigGroup, dataId, "gdd:\n  port: 6060\n  tracing:\n    metrics:\n      root: \"odin\"", "")
 	})
 }
 
@@ -194,7 +194,7 @@ func TestNacosConfigMgr_CallbackOnChange_Yaml_Error2(t *testing.T) {
 				return strings.NewReader(s)
 			}
 		}
-		nacosClient.CallbackOnChange(config.DefaultGddNacosNamespaceId, config.DefaultGddNacosConfigGroup, dataId, "gdd:\n  port: 6060\n  tracing:\n    metrics:\n      root: \"go-doudou\"", "")
+		nacosClient.CallbackOnChange(config.DefaultGddNacosNamespaceId, config.DefaultGddNacosConfigGroup, dataId, "gdd:\n  port: 6060\n  tracing:\n    metrics:\n      root: \"odin\"", "")
 	})
 }
 
@@ -301,7 +301,7 @@ func TestNacosConfigMgr_LoadFromNacos_UnknownFormat(t *testing.T) {
 		}
 
 		err := configmgr.LoadFromNacos(config.GetNacosClientParam(), dataId, unknownFormat, config.DefaultGddNacosConfigGroup)
-		So(err, ShouldResemble, fmt.Errorf("[go-doudou] unknown config format: %s\n", unknownFormat))
+		So(err, ShouldResemble, fmt.Errorf("[odin] unknown config format: %s\n", unknownFormat))
 	})
 }
 

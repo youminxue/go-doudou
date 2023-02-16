@@ -1,8 +1,8 @@
 package config
 
-import "github.com/youminxue/v2/framework/configmgr"
+import "github.com/youminxue/odin/framework/configmgr"
 
-const FrameworkName = "go-doudou"
+const FrameworkName = "odin"
 
 const (
 	// Default configs for framework component

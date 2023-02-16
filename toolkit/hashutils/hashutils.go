@@ -5,7 +5,7 @@ import (
 	"encoding/base64"
 	"encoding/hex"
 	"fmt"
-	"github.com/youminxue/v2/toolkit/stringutils"
+	"github.com/youminxue/odin/toolkit/stringutils"
 )
 
 // Sha1 return sha1 string

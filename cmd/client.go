@@ -1,7 +1,7 @@
 package cmd
 
 import (
-	"github.com/youminxue/v2/cmd/internal/svc"
+	"github.com/youminxue/odin/cmd/internal/svc"
 
 	"github.com/spf13/cobra"
 )

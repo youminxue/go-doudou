@@ -6,8 +6,8 @@ import (
 	"encoding/json"
 	"fmt"
 	"github.com/sirupsen/logrus"
-	"github.com/youminxue/v2/toolkit/constants"
-	"github.com/youminxue/v2/toolkit/stringutils"
+	"github.com/youminxue/odin/toolkit/constants"
+	"github.com/youminxue/odin/toolkit/stringutils"
 	"go/ast"
 	"go/format"
 	"golang.org/x/tools/imports"
@@ -259,7 +259,7 @@ type StructMeta struct {
 	Comments []string
 	Methods  []MethodMeta
 	IsExport bool
-	// go-doudou version
+	// odin version
 	Version string
 }
 

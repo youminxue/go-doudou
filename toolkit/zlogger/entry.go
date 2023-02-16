@@ -5,7 +5,7 @@ import (
 	"fmt"
 	"github.com/rs/zerolog"
 	"github.com/rs/zerolog/pkgerrors"
-	"github.com/youminxue/v2/toolkit/constants"
+	"github.com/youminxue/odin/toolkit/constants"
 	"io"
 	"os"
 	"strconv"

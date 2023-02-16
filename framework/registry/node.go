@@ -1,12 +1,12 @@
 package registry
 
 import (
-	"github.com/youminxue/v2/framework/internal/config"
-	"github.com/youminxue/v2/framework/registry/constants"
-	"github.com/youminxue/v2/framework/registry/etcd"
-	"github.com/youminxue/v2/framework/registry/memberlist"
-	"github.com/youminxue/v2/framework/registry/nacos"
-	logger "github.com/youminxue/v2/toolkit/zlogger"
+	"github.com/youminxue/odin/framework/internal/config"
+	"github.com/youminxue/odin/framework/registry/constants"
+	"github.com/youminxue/odin/framework/registry/etcd"
+	"github.com/youminxue/odin/framework/registry/memberlist"
+	"github.com/youminxue/odin/framework/registry/nacos"
+	logger "github.com/youminxue/odin/toolkit/zlogger"
 )
 
 type IServiceProvider interface {
@@ -23,7 +23,7 @@ func NewRest(data ...map[string]interface{}) {
 		case constants.SD_MEMBERLIST:
 			memberlist.NewRest(data...)
 		default:
-			logger.Warn().Msgf("[go-doudou] unknown service discovery mode: %s", mode)
+			logger.Warn().Msgf("[odin] unknown service discovery mode: %s", mode)
 		}
 	}
 }
@@ -38,7 +38,7 @@ func NewGrpc(data ...map[string]interface{}) {
 		case constants.SD_MEMBERLIST:
 			memberlist.NewGrpc(data...)
 		default:
-			logger.Warn().Msgf("[go-doudou] unknown service discovery mode: %s", mode)
+			logger.Warn().Msgf("[odin] unknown service discovery mode: %s", mode)
 		}
 	}
 }
@@ -53,7 +53,7 @@ func ShutdownRest() {
 		case constants.SD_MEMBERLIST:
 			memberlist.Shutdown()
 		default:
-			logger.Warn().Msgf("[go-doudou] unknown service discovery mode: %s", mode)
+			logger.Warn().Msgf("[odin] unknown service discovery mode: %s", mode)
 		}
 	}
 }
@@ -68,7 +68,7 @@ func ShutdownGrpc() {
 		case constants.SD_MEMBERLIST:
 			memberlist.Shutdown()
 		default:
-			logger.Warn().Msgf("[go-doudou] unknown service discovery mode: %s", mode)
+			logger.Warn().Msgf("[odin] unknown service discovery mode: %s", mode)
 		}
 	}
 }

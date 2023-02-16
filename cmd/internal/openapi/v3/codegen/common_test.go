@@ -2,8 +2,8 @@ package codegen
 
 import (
 	"github.com/stretchr/testify/assert"
-	v3 "github.com/youminxue/v2/toolkit/openapi/v3"
-	"github.com/youminxue/v2/toolkit/pathutils"
+	v3 "github.com/youminxue/odin/toolkit/openapi/v3"
+	"github.com/youminxue/odin/toolkit/pathutils"
 	"path"
 	"path/filepath"
 	"strings"

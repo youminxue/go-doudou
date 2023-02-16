@@ -16,7 +16,7 @@ func docRoutes() []Route {
 		{
 			Name:    "GetDoc",
 			Method:  "GET",
-			Pattern: "/go-doudou/doc",
+			Pattern: "/odin/doc",
 			HandlerFunc: func(_writer http.ResponseWriter, _req *http.Request) {
 				var (
 					tpl    *template.Template
@@ -33,7 +33,7 @@ func docRoutes() []Route {
 					scheme = "https"
 				}
 				doc := Oas
-				docUrl := fmt.Sprintf("%s://%s/go-doudou/openapi.json", scheme, _req.Host)
+				docUrl := fmt.Sprintf("%s://%s/odin/openapi.json", scheme, _req.Host)
 				if err = tpl.Execute(&buf, struct {
 					Doc    string
 					DocUrl string
@@ -50,7 +50,7 @@ func docRoutes() []Route {
 		{
 			Name:    "GetOpenAPI",
 			Method:  "GET",
-			Pattern: "/go-doudou/openapi.json",
+			Pattern: "/odin/openapi.json",
 			HandlerFunc: func(_writer http.ResponseWriter, _req *http.Request) {
 				_writer.Write([]byte(Oas))
 			},

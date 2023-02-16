@@ -3,7 +3,7 @@ package astutils
 import (
 	"fmt"
 	"github.com/stretchr/testify/assert"
-	"github.com/youminxue/v2/toolkit/pathutils"
+	"github.com/youminxue/odin/toolkit/pathutils"
 	"go/ast"
 	"go/parser"
 	"go/token"

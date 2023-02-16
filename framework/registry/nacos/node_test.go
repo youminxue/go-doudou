@@ -9,10 +9,10 @@ import (
 	"github.com/wubin1989/nacos-sdk-go/v2/clients/naming_client"
 	"github.com/wubin1989/nacos-sdk-go/v2/model"
 	"github.com/wubin1989/nacos-sdk-go/v2/vo"
-	"github.com/youminxue/v2/framework/buildinfo"
-	"github.com/youminxue/v2/framework/internal/config"
-	"github.com/youminxue/v2/framework/registry/nacos"
-	"github.com/youminxue/v2/framework/registry/nacos/mock"
+	"github.com/youminxue/odin/framework/buildinfo"
+	"github.com/youminxue/odin/framework/internal/config"
+	"github.com/youminxue/odin/framework/registry/nacos"
+	"github.com/youminxue/odin/framework/registry/nacos/mock"
 	"testing"
 )
 

@@ -2,7 +2,7 @@ package cmd
 
 import (
 	"github.com/spf13/cobra"
-	"github.com/youminxue/v2/cmd/internal/name"
+	"github.com/youminxue/odin/cmd/internal/name"
 )
 
 var file string

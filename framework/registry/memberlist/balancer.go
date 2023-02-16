@@ -1,7 +1,7 @@
 package memberlist
 
 import (
-	"github.com/youminxue/v2/toolkit/zlogger"
+	"github.com/youminxue/odin/toolkit/zlogger"
 	"sync"
 
 	"google.golang.org/grpc/balancer"
@@ -21,7 +21,7 @@ func init() {
 type wPickerBuilder struct{}
 
 func (*wPickerBuilder) Build(info balancerbase.PickerBuildInfo) balancer.Picker {
-	zlogger.Debug().Msgf("[go-doudou] memberlist_weight_balancer Picker: Build called with info: %v", info)
+	zlogger.Debug().Msgf("[odin] memberlist_weight_balancer Picker: Build called with info: %v", info)
 	if len(info.ReadySCs) == 0 {
 		return balancerbase.NewErrPicker(balancer.ErrNoSubConnAvailable)
 	}

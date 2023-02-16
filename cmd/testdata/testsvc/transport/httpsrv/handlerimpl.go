@@ -9,7 +9,7 @@ import (
 	"encoding/json"
 
 	"github.com/pkg/errors"
-	"github.com/youminxue/v2/framework/rest"
+	"github.com/youminxue/odin/framework/rest"
 )
 
 type TestsvcHandlerImpl struct {

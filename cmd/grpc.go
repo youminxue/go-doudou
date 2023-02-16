@@ -2,8 +2,8 @@ package cmd
 
 import (
 	"github.com/iancoleman/strcase"
-	v3 "github.com/youminxue/v2/cmd/internal/protobuf/v3"
-	"github.com/youminxue/v2/cmd/internal/svc"
+	v3 "github.com/youminxue/odin/cmd/internal/protobuf/v3"
+	"github.com/youminxue/odin/cmd/internal/svc"
 
 	"github.com/spf13/cobra"
 )

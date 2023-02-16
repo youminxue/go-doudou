@@ -9,10 +9,10 @@ import (
 	"github.com/wubin1989/nacos-sdk-go/v2/clients/config_client"
 	"github.com/wubin1989/nacos-sdk-go/v2/util"
 	"github.com/wubin1989/nacos-sdk-go/v2/vo"
-	"github.com/youminxue/v2/toolkit/dotenv"
-	"github.com/youminxue/v2/toolkit/maputils"
-	"github.com/youminxue/v2/toolkit/yaml"
-	logger "github.com/youminxue/v2/toolkit/zlogger"
+	"github.com/youminxue/odin/toolkit/dotenv"
+	"github.com/youminxue/odin/toolkit/maputils"
+	"github.com/youminxue/odin/toolkit/yaml"
+	logger "github.com/youminxue/odin/toolkit/zlogger"
 	"io"
 	"os"
 	"strings"
@@ -103,7 +103,7 @@ var NewConfigClient = clients.NewConfigClient
 func InitialiseNacosConfig(param vo.NacosClientParam, dataId, format, group string) {
 	client, err := NewConfigClient(param)
 	if err != nil {
-		panic(errors.Wrap(err, "[go-doudou] failed to create nacos config client"))
+		panic(errors.Wrap(err, "[odin] failed to create nacos config client"))
 	}
 	dataIds := strings.Split(dataId, ",")
 	NacosClient = &NacosConfigMgr{
@@ -124,17 +124,17 @@ func LoadFromNacos(param vo.NacosClientParam, dataId, format, group string) erro
 	case YamlConfigFormat:
 		for _, item := range NacosClient.dataIds {
 			if err := NacosClient.loadYaml(item); err != nil {
-				return errors.Wrap(err, "[go-doudou] failed to load yaml config")
+				return errors.Wrap(err, "[odin] failed to load yaml config")
 			}
 		}
 	case DotenvConfigFormat:
 		for _, item := range NacosClient.dataIds {
 			if err := NacosClient.loadDotenv(item); err != nil {
-				return errors.Wrap(err, "[go-doudou] failed to load dotenv config")
+				return errors.Wrap(err, "[odin] failed to load dotenv config")
 			}
 		}
 	default:
-		return fmt.Errorf("[go-doudou] unknown config format: %s\n", format)
+		return fmt.Errorf("[odin] unknown config format: %s\n", format)
 	}
 	NacosClient.listenConfig()
 	return nil
@@ -150,20 +150,20 @@ func (m *NacosConfigMgr) CallbackOnChange(namespace, group, dataId, data, old st
 	switch m.format {
 	case YamlConfigFormat:
 		if newData, err = yaml.LoadReaderAsMap(StringReader(data)); err != nil {
-			logger.Error().Err(err).Msg("[go-doudou] error from nacos config listener")
+			logger.Error().Err(err).Msg("[odin] error from nacos config listener")
 			return
 		}
 		if oldData, err = yaml.LoadReaderAsMap(StringReader(old)); err != nil {
-			logger.Error().Err(err).Msg("[go-doudou] error from nacos config listener")
+			logger.Error().Err(err).Msg("[odin] error from nacos config listener")
 			return
 		}
 	case DotenvConfigFormat:
 		if newData, err = dotenv.LoadAsMap(StringReader(data)); err != nil {
-			logger.Error().Err(err).Msg("[go-doudou] error from nacos config listener")
+			logger.Error().Err(err).Msg("[odin] error from nacos config listener")
 			return
 		}
 		if oldData, err = dotenv.LoadAsMap(StringReader(old)); err != nil {
-			logger.Error().Err(err).Msg("[go-doudou] error from nacos config listener")
+			logger.Error().Err(err).Msg("[odin] error from nacos config listener")
 			return
 		}
 	}
@@ -200,7 +200,7 @@ func (m *NacosConfigMgr) onChange(dataId, group, namespace string, changes map[s
 func (m *NacosConfigMgr) AddChangeListener(param NacosConfigListenerParam) {
 	key := util.GetConfigCacheKey(param.DataId, m.group, m.namespaceId)
 	if _, ok := m.listeners.Get(key); ok {
-		logger.Warn().Msgf("[go-doudou] you have already add a config change listener for dataId: %s, you cannot override it", param.DataId)
+		logger.Warn().Msgf("[odin] you have already add a config change listener for dataId: %s, you cannot override it", param.DataId)
 		return
 	}
 	m.listeners.Set(key, param)

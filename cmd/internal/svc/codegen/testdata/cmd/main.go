@@ -1,7 +1,7 @@
 package main
 
 import (
-	"github.com/youminxue/v2/framework/rest"
+	"github.com/youminxue/odin/framework/rest"
 	service "testdata"
 	"testdata/config"
 	"testdata/transport/httpsrv"

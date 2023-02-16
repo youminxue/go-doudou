@@ -2,7 +2,7 @@ package codegen
 
 import (
 	"fmt"
-	"github.com/youminxue/v2/toolkit/pathutils"
+	"github.com/youminxue/odin/toolkit/pathutils"
 	"os"
 	"path/filepath"
 	"testing"

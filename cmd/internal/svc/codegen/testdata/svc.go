@@ -3,7 +3,7 @@ package service
 import (
 	"context"
 	"github.com/shopspring/decimal"
-	v3 "github.com/youminxue/v2/toolkit/openapi/v3"
+	v3 "github.com/youminxue/odin/toolkit/openapi/v3"
 	"mime/multipart"
 	"os"
 	"testdata/vo"

@@ -2,7 +2,7 @@ package numberutils_test
 
 import (
 	"fmt"
-	"github.com/youminxue/v2/toolkit/numberutils"
+	"github.com/youminxue/odin/toolkit/numberutils"
 	"testing"
 )
 

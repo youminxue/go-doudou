@@ -2,7 +2,7 @@ package memberlist
 
 import (
 	"github.com/pkg/errors"
-	"github.com/youminxue/v2/toolkit/memberlist"
+	"github.com/youminxue/odin/toolkit/memberlist"
 	"google.golang.org/grpc/attributes"
 	gresolver "google.golang.org/grpc/resolver"
 	"net/url"

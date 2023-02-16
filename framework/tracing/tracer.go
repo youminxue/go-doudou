@@ -8,9 +8,9 @@ import (
 	"github.com/uber/jaeger-client-go/rpcmetrics"
 	"github.com/uber/jaeger-lib/metrics"
 	jprom "github.com/uber/jaeger-lib/metrics/prometheus"
-	ddconfig "github.com/youminxue/v2/framework/internal/config"
-	"github.com/youminxue/v2/toolkit/stringutils"
-	logger "github.com/youminxue/v2/toolkit/zlogger"
+	ddconfig "github.com/youminxue/odin/framework/internal/config"
+	"github.com/youminxue/odin/toolkit/stringutils"
+	logger "github.com/youminxue/odin/toolkit/zlogger"
 	"io"
 )
 
@@ -30,7 +30,7 @@ func Init() (opentracing.Tracer, io.Closer) {
 	cfg.Reporter.LogSpans = true
 	_, err := cfg.FromEnv()
 	if err != nil {
-		logger.Panic().Err(errors.Wrap(err, "[go-doudou] cannot parse Jaeger env vars")).Msg("")
+		logger.Panic().Err(errors.Wrap(err, "[odin] cannot parse Jaeger env vars")).Msg("")
 	}
 	jaegerLogger := jaegerLoggerAdapter{logger: logger.Logger}
 	metricsRoot := ddconfig.DefaultGddTracingMetricsRoot
@@ -44,7 +44,7 @@ func Init() (opentracing.Tracer, io.Closer) {
 		config.Observer(rpcmetrics.NewObserver(metricsFactory, rpcmetrics.DefaultNameNormalizer)),
 	)
 	if err != nil {
-		logger.Panic().Err(errors.Wrap(err, "[go-doudou] cannot initialize Jaeger Tracer")).Msg("")
+		logger.Panic().Err(errors.Wrap(err, "[odin] cannot initialize Jaeger Tracer")).Msg("")
 	}
 	return tracer, closer
 }

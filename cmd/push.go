@@ -2,7 +2,7 @@ package cmd
 
 import (
 	"github.com/spf13/cobra"
-	"github.com/youminxue/v2/cmd/internal/svc"
+	"github.com/youminxue/odin/cmd/internal/svc"
 )
 
 var imagePrefix string

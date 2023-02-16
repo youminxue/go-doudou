@@ -1,7 +1,7 @@
 package httprouter
 
 import (
-	"github.com/youminxue/v2/toolkit/stringutils"
+	"github.com/youminxue/odin/toolkit/stringutils"
 	"net/http"
 )
 

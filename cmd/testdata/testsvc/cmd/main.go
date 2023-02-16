@@ -3,7 +3,7 @@ package main
 import (
 	"github.com/ascarter/requestid"
 	"github.com/gorilla/handlers"
-	"github.com/youminxue/v2/framework/rest"
+	"github.com/youminxue/odin/framework/rest"
 	service "testsvc"
 	"testsvc/config"
 	"testsvc/transport/httpsrv"

@@ -1,7 +1,7 @@
 package imgutils_test
 
 import (
-	"github.com/youminxue/v2/toolkit/imgutils"
+	"github.com/youminxue/odin/toolkit/imgutils"
 	"os"
 	"path/filepath"
 	"testing"

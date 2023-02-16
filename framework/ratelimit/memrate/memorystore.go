@@ -4,8 +4,8 @@ import (
 	"context"
 	lru "github.com/hashicorp/golang-lru"
 	"github.com/hashicorp/golang-lru/simplelru"
-	"github.com/youminxue/v2/framework/ratelimit"
-	logger "github.com/youminxue/v2/toolkit/zlogger"
+	"github.com/youminxue/odin/framework/ratelimit"
+	logger "github.com/youminxue/odin/toolkit/zlogger"
 	"sync"
 )
 
@@ -97,5 +97,5 @@ func (store *MemoryStore) DeleteKey(key string) {
 	defer store.mu.Unlock()
 
 	store.keys.Remove(key)
-	logger.Debug().Msgf("[go-doudou] key %s is deleted from store", key)
+	logger.Debug().Msgf("[odin] key %s is deleted from store", key)
 }

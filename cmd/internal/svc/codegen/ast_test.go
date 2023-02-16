@@ -2,7 +2,7 @@ package codegen
 
 import (
 	. "github.com/smartystreets/goconvey/convey"
-	"github.com/youminxue/v2/toolkit/astutils"
+	"github.com/youminxue/odin/toolkit/astutils"
 	"path/filepath"
 	"testing"
 )

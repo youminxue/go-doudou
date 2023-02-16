@@ -1,8 +1,8 @@
 package ddlast
 
 import (
-	"github.com/youminxue/v2/toolkit/astutils"
-	"github.com/youminxue/v2/toolkit/sliceutils"
+	"github.com/youminxue/odin/toolkit/astutils"
+	"github.com/youminxue/odin/toolkit/sliceutils"
 	"sort"
 	"strings"
 )

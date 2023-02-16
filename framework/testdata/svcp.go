@@ -2,8 +2,8 @@ package service
 
 import (
 	"context"
-	"github.com/youminxue/v2/framework/testdata/vo"
-	v3 "github.com/youminxue/v2/toolkit/openapi/v3"
+	"github.com/youminxue/odin/framework/testdata/vo"
+	v3 "github.com/youminxue/odin/toolkit/openapi/v3"
 	"os"
 )
 

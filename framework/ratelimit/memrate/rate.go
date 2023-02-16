@@ -8,8 +8,8 @@ package memrate
 import (
 	"context"
 	"fmt"
-	"github.com/youminxue/v2/framework/ratelimit"
-	logger "github.com/youminxue/v2/toolkit/zlogger"
+	"github.com/youminxue/odin/framework/ratelimit"
+	logger "github.com/youminxue/odin/toolkit/zlogger"
 	"math"
 	"sync"
 	"time"

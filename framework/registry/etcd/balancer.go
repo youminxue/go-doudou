@@ -1,7 +1,7 @@
 package etcd
 
 import (
-	"github.com/youminxue/v2/toolkit/zlogger"
+	"github.com/youminxue/odin/toolkit/zlogger"
 	"sync"
 
 	"google.golang.org/grpc/balancer"
@@ -21,7 +21,7 @@ func init() {
 type wPickerBuilder struct{}
 
 func (*wPickerBuilder) Build(info base.PickerBuildInfo) balancer.Picker {
-	zlogger.Debug().Msgf("[go-doudou] etcd_weight_balancer Picker: Build called with info: %v", info)
+	zlogger.Debug().Msgf("[odin] etcd_weight_balancer Picker: Build called with info: %v", info)
 	if len(info.ReadySCs) == 0 {
 		return base.NewErrPicker(balancer.ErrNoSubConnAvailable)
 	}
@@ -29,7 +29,7 @@ func (*wPickerBuilder) Build(info base.PickerBuildInfo) balancer.Picker {
 	for sc, v := range info.ReadySCs {
 		weight := 1
 		if metadata, ok := v.Address.Metadata.(map[string]interface{}); !ok {
-			zlogger.Error().Msg("[go-doudou] etcd endpoint metadata is not map[string]string type")
+			zlogger.Error().Msg("[odin] etcd endpoint metadata is not map[string]string type")
 		} else {
 			weight = int(metadata["weight"].(float64))
 		}

@@ -16,7 +16,7 @@ RUN apk add --no-cache bash tzdata
 
 ENV TZ="Asia/Shanghai"
 
-RUN export GDD_VER=$(go list -mod=vendor -m -f '{{ .Version }}' github.com/youminxue/v2) && \
-CGO_ENABLED=0 GOOS=linux GOARCH=amd64 go build -v -ldflags="-X 'github.com/youminxue/v2/framework/internal/config.BuildUser=$HOST_USER' -X 'github.com/youminxue/v2/framework/internal/config.BuildTime=$(date)' -X 'github.com/youminxue/v2/framework/internal/config.GddVer=$GDD_VER'" -mod vendor -o api cmd/main.go
+RUN export GDD_VER=$(go list -mod=vendor -m -f '{{ .Version }}' github.com/youminxue/odin) && \
+CGO_ENABLED=0 GOOS=linux GOARCH=amd64 go build -v -ldflags="-X 'github.com/youminxue/odin/framework/internal/config.BuildUser=$HOST_USER' -X 'github.com/youminxue/odin/framework/internal/config.BuildTime=$(date)' -X 'github.com/youminxue/odin/framework/internal/config.GddVer=$GDD_VER'" -mod vendor -o api cmd/main.go
 
 ENTRYPOINT ["/repo/api"]

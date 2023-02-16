@@ -9,7 +9,7 @@ import (
 
 	"github.com/brianvoe/gofakeit/v6"
 	"github.com/jmoiron/sqlx"
-	v3 "github.com/youminxue/v2/toolkit/openapi/v3"
+	v3 "github.com/youminxue/odin/toolkit/openapi/v3"
 )
 
 type UsersvcImpl struct {

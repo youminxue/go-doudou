@@ -5,9 +5,9 @@ package rest
 // Post link https://gabrieltanner.org/blog/collecting-prometheus-metrics-in-golang written by TannerGabriel
 import (
 	"github.com/prometheus/client_golang/prometheus"
-	"github.com/youminxue/v2/framework/buildinfo"
-	"github.com/youminxue/v2/toolkit/constants"
-	"github.com/youminxue/v2/toolkit/stringutils"
+	"github.com/youminxue/odin/framework/buildinfo"
+	"github.com/youminxue/odin/toolkit/constants"
+	"github.com/youminxue/odin/toolkit/stringutils"
 	"net/http"
 	"runtime"
 	"strconv"
@@ -72,7 +72,7 @@ func init() {
 	}
 	appInfo := prometheus.NewGauge(prometheus.GaugeOpts{
 		Name: "go_doudou_app_info",
-		Help: "Information about the go-doudou app",
+		Help: "Information about the odin app",
 		ConstLabels: prometheus.Labels{
 			"goVer":     runtime.Version(),
 			"gddVer":    buildinfo.GddVer,

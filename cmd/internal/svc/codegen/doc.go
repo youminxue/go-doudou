@@ -17,10 +17,10 @@ import (
 
 	"github.com/iancoleman/strcase"
 	"github.com/sirupsen/logrus"
-	"github.com/youminxue/v2/toolkit/astutils"
-	"github.com/youminxue/v2/toolkit/constants"
-	v3 "github.com/youminxue/v2/toolkit/openapi/v3"
-	"github.com/youminxue/v2/toolkit/stringutils"
+	"github.com/youminxue/odin/toolkit/astutils"
+	"github.com/youminxue/odin/toolkit/constants"
+	v3 "github.com/youminxue/odin/toolkit/openapi/v3"
+	"github.com/youminxue/odin/toolkit/stringutils"
 )
 
 func getSchemaNames(vofile string) []string {
@@ -330,7 +330,7 @@ func pathsOf(ic astutils.InterfaceCollector, routePatternStrategy int) map[strin
 
 var gofileTmpl = `package {{.SvcPackage}}
 
-import "github.com/youminxue/v2/framework/rest"
+import "github.com/youminxue/odin/framework/rest"
 
 func init() {
 	rest.Oas = ` + "`" + `{{.Doc}}` + "`" + `

@@ -1,8 +1,8 @@
 package cmd_test
 
 import (
-	"github.com/youminxue/v2/cmd"
-	"github.com/youminxue/v2/toolkit/astutils"
+	"github.com/youminxue/odin/cmd"
+	"github.com/youminxue/odin/toolkit/astutils"
 	"os"
 	"path/filepath"
 	"testing"

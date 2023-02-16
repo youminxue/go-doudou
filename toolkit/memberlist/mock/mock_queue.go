@@ -8,7 +8,7 @@ import (
 	reflect "reflect"
 
 	gomock "github.com/golang/mock/gomock"
-	memberlist "github.com/youminxue/v2/toolkit/memberlist"
+	memberlist "github.com/youminxue/odin/toolkit/memberlist"
 )
 
 // MockBroadcast is a mock of Broadcast interface.

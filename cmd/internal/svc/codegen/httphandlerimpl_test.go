@@ -2,8 +2,8 @@ package codegen
 
 import (
 	"fmt"
-	"github.com/youminxue/v2/toolkit/astutils"
-	"github.com/youminxue/v2/toolkit/copier"
+	"github.com/youminxue/odin/toolkit/astutils"
+	"github.com/youminxue/odin/toolkit/copier"
 	"path/filepath"
 	"testing"
 )

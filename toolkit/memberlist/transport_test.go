@@ -3,8 +3,8 @@ package memberlist_test
 import (
 	"github.com/golang/mock/gomock"
 	. "github.com/smartystreets/goconvey/convey"
-	"github.com/youminxue/v2/toolkit/memberlist"
-	memmock "github.com/youminxue/v2/toolkit/memberlist/mock"
+	"github.com/youminxue/odin/toolkit/memberlist"
+	memmock "github.com/youminxue/odin/toolkit/memberlist/mock"
 	"io"
 	"net"
 	"strings"

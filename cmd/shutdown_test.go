@@ -2,7 +2,7 @@ package cmd_test
 
 import (
 	"github.com/stretchr/testify/assert"
-	"github.com/youminxue/v2/cmd"
+	"github.com/youminxue/odin/cmd"
 	"os"
 	"path/filepath"
 	"testing"

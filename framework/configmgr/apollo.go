@@ -6,7 +6,7 @@ import (
 	"github.com/apolloconfig/agollo/v4/env/config"
 	"github.com/apolloconfig/agollo/v4/storage"
 	"github.com/pkg/errors"
-	logger "github.com/youminxue/v2/toolkit/zlogger"
+	logger "github.com/youminxue/odin/toolkit/zlogger"
 	"os"
 	"strings"
 	"sync"
@@ -22,9 +22,9 @@ func InitialiseApolloConfig(appConfig *config.AppConfig) {
 		return appConfig, nil
 	})
 	if err != nil {
-		panic(errors.Wrap(err, "[go-doudou] failed to initialise apollo client"))
+		panic(errors.Wrap(err, "[odin] failed to initialise apollo client"))
 	}
-	logger.Info().Msg("[go-doudou] initialise apollo client successfully")
+	logger.Info().Msg("[odin] initialise apollo client successfully")
 }
 
 func LoadFromApollo(appConfig *config.AppConfig) {
@@ -41,7 +41,7 @@ func LoadFromApollo(appConfig *config.AppConfig) {
 		}
 		cache := ApolloClient.GetConfigCache(item)
 		cache.Range(func(key, value interface{}) bool {
-			logger.Debug().Msgf("[go-doudou] key: %s, value: %s\n", key, value)
+			logger.Debug().Msgf("[odin] key: %s, value: %s\n", key, value)
 			upperK := strings.ToUpper(strings.ReplaceAll(key.(string), ".", "_"))
 			if !currentEnv[upperK] {
 				_ = os.Setenv(upperK, fmt.Sprint(value))

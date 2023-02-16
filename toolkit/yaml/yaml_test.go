@@ -4,7 +4,7 @@ import (
 	"bytes"
 	"github.com/pkg/errors"
 	"github.com/stretchr/testify/require"
-	"github.com/youminxue/v2/toolkit/yaml"
+	"github.com/youminxue/odin/toolkit/yaml"
 	"io"
 	"io/ioutil"
 	"os"

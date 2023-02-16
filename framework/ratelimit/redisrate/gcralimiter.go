@@ -2,15 +2,15 @@ package redisrate
 
 import (
 	"context"
-	"github.com/youminxue/v2/framework/ratelimit"
-	logger "github.com/youminxue/v2/toolkit/zlogger"
+	"github.com/youminxue/odin/framework/ratelimit"
+	logger "github.com/youminxue/odin/toolkit/zlogger"
 	"strconv"
 	"time"
 
 	"github.com/go-redis/redis/v8"
 )
 
-const redisPrefix = "go-doudou:rate:"
+const redisPrefix = "odin:rate:"
 
 type Rediser interface {
 	Eval(ctx context.Context, script string, keys []string, args ...interface{}) *redis.Cmd

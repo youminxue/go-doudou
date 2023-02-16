@@ -6,8 +6,8 @@ import (
 	"github.com/google/uuid"
 	"github.com/opentracing/opentracing-go"
 	"github.com/opentracing/opentracing-go/mocktracer"
-	"github.com/youminxue/v2/framework/tracing"
-	"github.com/youminxue/v2/toolkit/sqlext/logger"
+	"github.com/youminxue/odin/framework/tracing"
+	"github.com/youminxue/odin/toolkit/sqlext/logger"
 	"os"
 	"testing"
 )

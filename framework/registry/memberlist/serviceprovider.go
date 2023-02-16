@@ -3,9 +3,9 @@ package memberlist
 import (
 	"context"
 	"fmt"
-	"github.com/youminxue/v2/toolkit/memberlist"
-	"github.com/youminxue/v2/toolkit/stringutils"
-	logger "github.com/youminxue/v2/toolkit/zlogger"
+	"github.com/youminxue/odin/toolkit/memberlist"
+	"github.com/youminxue/odin/toolkit/stringutils"
+	logger "github.com/youminxue/odin/toolkit/zlogger"
 	"google.golang.org/grpc"
 	"sync"
 	"sync/atomic"
@@ -65,12 +65,12 @@ func (m *base) AddNode(node *memberlist.Node) {
 		}
 		m.nodes = append(m.nodes, s)
 		m.nodeMap[node.Name] = s
-		logger.Info().Msgf("[go-doudou] add node %s to load balancer, supplying %s service", node.Name, service.Name)
+		logger.Info().Msgf("[odin] add node %s to load balancer, supplying %s service", node.Name, service.Name)
 	} else {
 		old := *s
 		s.baseUrl = baseUrl
 		s.weight = weight
-		logger.Info().Msgf("[go-doudou] node %s update, supplying %s service, old: %+v, new: %+v", node.Name, service.Name, old, *s)
+		logger.Info().Msgf("[odin] node %s update, supplying %s service, old: %+v, new: %+v", node.Name, service.Name, old, *s)
 	}
 }
 
@@ -86,7 +86,7 @@ func (m *base) UpdateWeight(node *memberlist.Node) {
 	if s, exists := m.nodeMap[node.Name]; exists {
 		old := *s
 		s.weight = node.Weight
-		logger.Info().Msgf("[go-doudou] weight of node %s update, old: %d, new: %d", node.Name, old.weight, s.weight)
+		logger.Info().Msgf("[odin] weight of node %s update, old: %d, new: %d", node.Name, old.weight, s.weight)
 	}
 }
 
@@ -109,7 +109,7 @@ func (m *base) RemoveNode(node *memberlist.Node) {
 		}
 		m.nodes = append(m.nodes[:idx], m.nodes[idx+1:]...)
 		delete(m.nodeMap, node.Name)
-		logger.Info().Msgf("[go-doudou] remove node %s from load balancer, supplying %s service", node.Name, service.Name)
+		logger.Info().Msgf("[odin] remove node %s from load balancer, supplying %s service", node.Name, service.Name)
 	}
 }
 
@@ -246,7 +246,7 @@ func NewGrpcClientConn(service string, lb string, dialOptions ...grpc.DialOption
 	defer cancel()
 	grpcConn, err := grpc.DialContext(ctx, serverAddr, dialOptions...)
 	if err != nil {
-		logger.Panic().Err(err).Msgf("[go-doudou] failed to connect to server %s", serverAddr)
+		logger.Panic().Err(err).Msgf("[odin] failed to connect to server %s", serverAddr)
 	}
 	return grpcConn
 }

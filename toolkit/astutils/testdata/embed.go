@@ -1,6 +1,6 @@
 package main
 
-//go:generate go-doudou name --file $GOFILE
+//go:generate odin name --file $GOFILE
 
 type TestBase struct {
 	Index string `json:"index"`

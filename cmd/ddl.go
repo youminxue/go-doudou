@@ -4,11 +4,11 @@ import (
 	"github.com/kelseyhightower/envconfig"
 	"github.com/sirupsen/logrus"
 	"github.com/spf13/cobra"
-	"github.com/youminxue/v2/cmd/internal/ddl"
-	"github.com/youminxue/v2/cmd/internal/ddl/config"
-	"github.com/youminxue/v2/toolkit/dotenv"
-	"github.com/youminxue/v2/toolkit/pathutils"
-	"github.com/youminxue/v2/toolkit/yaml"
+	"github.com/youminxue/odin/cmd/internal/ddl"
+	"github.com/youminxue/odin/cmd/internal/ddl/config"
+	"github.com/youminxue/odin/toolkit/dotenv"
+	"github.com/youminxue/odin/toolkit/pathutils"
+	"github.com/youminxue/odin/toolkit/yaml"
 )
 
 var dir string

@@ -3,8 +3,8 @@ package logger
 import (
 	"github.com/mattn/go-colorable"
 	"github.com/sirupsen/logrus"
-	"github.com/youminxue/v2/framework/internal/config"
-	"github.com/youminxue/v2/toolkit/stringutils"
+	"github.com/youminxue/odin/framework/internal/config"
+	"github.com/youminxue/odin/toolkit/stringutils"
 	"io"
 )
 

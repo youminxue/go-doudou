@@ -6,14 +6,14 @@ import (
 	"github.com/pkg/errors"
 	"github.com/radovskyb/watcher"
 	"github.com/sirupsen/logrus"
-	"github.com/youminxue/v2/cmd/internal/executils"
-	"github.com/youminxue/v2/cmd/internal/openapi/v3/codegen/client"
-	"github.com/youminxue/v2/cmd/internal/openapi/v3/codegen/server"
-	v3 "github.com/youminxue/v2/cmd/internal/protobuf/v3"
-	"github.com/youminxue/v2/cmd/internal/svc/codegen"
-	"github.com/youminxue/v2/toolkit/astutils"
-	v3helper "github.com/youminxue/v2/toolkit/openapi/v3"
-	"github.com/youminxue/v2/toolkit/stringutils"
+	"github.com/youminxue/odin/cmd/internal/executils"
+	"github.com/youminxue/odin/cmd/internal/openapi/v3/codegen/client"
+	"github.com/youminxue/odin/cmd/internal/openapi/v3/codegen/server"
+	v3 "github.com/youminxue/odin/cmd/internal/protobuf/v3"
+	"github.com/youminxue/odin/cmd/internal/svc/codegen"
+	"github.com/youminxue/odin/toolkit/astutils"
+	v3helper "github.com/youminxue/odin/toolkit/openapi/v3"
+	"github.com/youminxue/odin/toolkit/stringutils"
 	"os"
 	"os/exec"
 	"os/user"
@@ -156,8 +156,8 @@ func (receiver *Svc) Http() {
 
 // ValidateRestApi is checking whether parameter types in each of service interface methods valid or not
 // Only support at most one golang non-built-in type as parameter in a service interface method
-// because go-doudou cannot put more than one parameter into request body except v3.FileModel.
-// If there are v3.FileModel parameters, go-doudou will assume you want a multipart/form-data api
+// because odin cannot put more than one parameter into request body except v3.FileModel.
+// If there are v3.FileModel parameters, odin will assume you want a multipart/form-data api
 // Support struct, map[string]ANY, built-in type and corresponding slice only
 // Not support anonymous struct as parameter
 func ValidateRestApi(dir string, ic astutils.InterfaceCollector) {
@@ -307,7 +307,7 @@ func (receiver *Svc) Push(cfg PushConfig) {
 
 	codegen.GenK8sDeployment(receiver.dir, svcname, imageName)
 	codegen.GenK8sStatefulset(receiver.dir, svcname, imageName)
-	logrus.Infof("k8s yaml has been created/updated successfully. execute command 'go-doudou svc deploy' to deploy service %s to k8s cluster\n", svcname)
+	logrus.Infof("k8s yaml has been created/updated successfully. execute command 'odin svc deploy' to deploy service %s to k8s cluster\n", svcname)
 }
 
 // Deploy deploys project to kubernetes. If k8sfile flag not set, it will be deployed as deployment kind using *_deployment.yaml file in the project root,
@@ -481,10 +481,10 @@ func (receiver *Svc) Run(watch bool) {
 	}
 }
 
-// Upgrade upgrades go-doudou to latest release version
+// Upgrade upgrades odin to latest release version
 func (receiver *Svc) Upgrade(version string) {
-	fmt.Printf("go install -v github.com/youminxue/v2@%s\n", version)
-	if err := receiver.runner.Run("go", "install", "-v", fmt.Sprintf("github.com/youminxue/v2@%s", version)); err != nil {
+	fmt.Printf("go install -v github.com/youminxue/odin@%s\n", version)
+	if err := receiver.runner.Run("go", "install", "-v", fmt.Sprintf("github.com/youminxue/odin@%s", version)); err != nil {
 		panic(err)
 	}
 }

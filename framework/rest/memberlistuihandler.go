@@ -4,8 +4,8 @@ import (
 	"bytes"
 	"encoding/json"
 	"github.com/hako/durafmt"
-	registry "github.com/youminxue/v2/framework/registry/memberlist"
-	"github.com/youminxue/v2/toolkit/memberlist"
+	registry "github.com/youminxue/odin/framework/registry/memberlist"
+	"github.com/youminxue/odin/toolkit/memberlist"
 	"net/http"
 	"text/template"
 	"time"
@@ -56,7 +56,7 @@ func MemberlistUIRoutes() []Route {
 		{
 			Name:    "GetRegistry",
 			Method:  "GET",
-			Pattern: "/go-doudou/registry",
+			Pattern: "/odin/registry",
 			HandlerFunc: func(writer http.ResponseWriter, request *http.Request) {
 				var (
 					tpl   *template.Template

@@ -4,9 +4,9 @@ import (
 	"bytes"
 	"fmt"
 	"github.com/hashicorp/go-msgpack/codec"
-	"github.com/youminxue/v2/framework/registry/constants"
-	"github.com/youminxue/v2/toolkit/memberlist"
-	logger "github.com/youminxue/v2/toolkit/zlogger"
+	"github.com/youminxue/odin/framework/registry/constants"
+	"github.com/youminxue/odin/toolkit/memberlist"
+	logger "github.com/youminxue/odin/toolkit/zlogger"
 	"sync"
 	"time"
 )
@@ -64,12 +64,12 @@ func (d *delegate) NodeMeta(limit int) []byte {
 	var buf bytes.Buffer
 	enc := codec.NewEncoder(&buf, &codec.MsgpackHandle{})
 	if err := enc.Encode(d.meta); err != nil {
-		logger.Panic().Err(err).Msg("[go-doudou] Failed to encode node meta data")
+		logger.Panic().Err(err).Msg("[odin] Failed to encode node meta data")
 	}
 	raw := buf.Bytes()
 
 	if len(raw) > limit {
-		logger.Panic().Msgf("[go-doudou] Node meta data '%v' exceeds length limit of %d bytes", d.meta, limit)
+		logger.Panic().Msgf("[odin] Node meta data '%v' exceeds length limit of %d bytes", d.meta, limit)
 	}
 	return raw
 }

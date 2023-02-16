@@ -7,8 +7,8 @@ import (
 	goversion "github.com/hashicorp/go-version"
 	"github.com/manifoldco/promptui"
 	"github.com/spf13/cobra"
-	"github.com/youminxue/v2/cmd/internal/svc"
-	"github.com/youminxue/v2/version"
+	"github.com/youminxue/odin/cmd/internal/svc"
+	"github.com/youminxue/odin/version"
 	"os"
 	"time"
 )
@@ -16,7 +16,7 @@ import (
 func LatestReleaseVer() string {
 	ctx, cancel := context.WithTimeout(context.Background(), 10*time.Second)
 	defer cancel()
-	release, _, err := github.NewClient(nil).Repositories.GetLatestRelease(ctx, "unionj-cloud", "go-doudou")
+	release, _, err := github.NewClient(nil).Repositories.GetLatestRelease(ctx, "unionj-cloud", "odin")
 	if err != nil {
 		panic(err)
 	}
@@ -35,8 +35,8 @@ var LatestReleaseVerFunc = LatestReleaseVer
 
 var versionCmd = &cobra.Command{
 	Use:   "version",
-	Short: "Print the version number of go-doudou",
-	Long:  `You can get information about latest release version besides version number of installed go-doudou`,
+	Short: "Print the version number of odin",
+	Long:  `You can get information about latest release version besides version number of installed odin`,
 	Run: func(cmd *cobra.Command, args []string) {
 		fmt.Printf("Installed version is %s\n", version.Release)
 		latest := LatestReleaseVerFunc()

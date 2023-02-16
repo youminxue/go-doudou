@@ -1,4 +1,4 @@
-module github.com/youminxue/v2
+module github.com/youminxue/odin
 
 go 1.16
 

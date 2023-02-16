@@ -3,9 +3,9 @@ package codegen
 import (
 	"fmt"
 	. "github.com/smartystreets/goconvey/convey"
-	"github.com/youminxue/v2/toolkit/astutils"
-	v3helper "github.com/youminxue/v2/toolkit/openapi/v3"
-	"github.com/youminxue/v2/toolkit/pathutils"
+	"github.com/youminxue/odin/toolkit/astutils"
+	v3helper "github.com/youminxue/odin/toolkit/openapi/v3"
+	"github.com/youminxue/odin/toolkit/pathutils"
 	"os"
 	"path/filepath"
 	"testing"

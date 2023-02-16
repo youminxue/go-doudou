@@ -10,15 +10,15 @@ import (
 	"github.com/klauspost/compress/gzhttp"
 	"github.com/olekukonko/tablewriter"
 	"github.com/rs/cors"
-	"github.com/youminxue/v2/framework"
-	"github.com/youminxue/v2/framework/internal/banner"
-	"github.com/youminxue/v2/framework/internal/config"
-	register "github.com/youminxue/v2/framework/registry"
-	"github.com/youminxue/v2/framework/registry/constants"
-	"github.com/youminxue/v2/framework/rest"
-	"github.com/youminxue/v2/toolkit/cast"
-	"github.com/youminxue/v2/toolkit/stringutils"
-	logger "github.com/youminxue/v2/toolkit/zlogger"
+	"github.com/youminxue/odin/framework"
+	"github.com/youminxue/odin/framework/internal/banner"
+	"github.com/youminxue/odin/framework/internal/config"
+	register "github.com/youminxue/odin/framework/registry"
+	"github.com/youminxue/odin/framework/registry/constants"
+	"github.com/youminxue/odin/framework/rest"
+	"github.com/youminxue/odin/toolkit/cast"
+	"github.com/youminxue/odin/toolkit/stringutils"
+	logger "github.com/youminxue/odin/toolkit/zlogger"
 	"net/http"
 	"net/http/pprof"
 	"os"
@@ -50,7 +50,7 @@ type RestServer struct {
 	common
 }
 
-const gddPathPrefix = "/go-doudou/"
+const gddPathPrefix = "/odin/"
 const debugPathPrefix = "/debug/"
 
 var contentTypeShouldbeGzip []string

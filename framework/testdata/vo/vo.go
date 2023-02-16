@@ -1,6 +1,6 @@
 package vo
 
-//go:generate go-doudou name --file $GOFILE -o
+//go:generate odin name --file $GOFILE -o
 
 // 筛选条件
 type PageFilter struct {

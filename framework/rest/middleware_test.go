@@ -17,14 +17,14 @@ import (
 	"github.com/wubin1989/nacos-sdk-go/v2/clients/cache"
 	"github.com/wubin1989/nacos-sdk-go/v2/clients/config_client"
 	"github.com/wubin1989/nacos-sdk-go/v2/vo"
-	"github.com/youminxue/v2/framework/configmgr"
-	"github.com/youminxue/v2/framework/configmgr/mock"
-	"github.com/youminxue/v2/framework/internal/config"
-	"github.com/youminxue/v2/framework/registry"
-	"github.com/youminxue/v2/framework/rest"
-	httpMock "github.com/youminxue/v2/framework/rest/mock"
-	"github.com/youminxue/v2/framework/restclient"
-	"github.com/youminxue/v2/toolkit/maputils"
+	"github.com/youminxue/odin/framework/configmgr"
+	"github.com/youminxue/odin/framework/configmgr/mock"
+	"github.com/youminxue/odin/framework/internal/config"
+	"github.com/youminxue/odin/framework/registry"
+	"github.com/youminxue/odin/framework/rest"
+	httpMock "github.com/youminxue/odin/framework/rest/mock"
+	"github.com/youminxue/odin/framework/restclient"
+	"github.com/youminxue/odin/toolkit/maputils"
 	"net/http"
 	"os"
 	"testing"
@@ -42,7 +42,7 @@ type MocksvcHandler struct{}
 
 func (m *MocksvcHandler) GetUser(w http.ResponseWriter, r *http.Request) {
 	w.Header().Set("Content-Type", "text/plain")
-	w.Write([]byte("go-doudou"))
+	w.Write([]byte("odin"))
 }
 
 func (m *MocksvcHandler) SaveUser(w http.ResponseWriter, r *http.Request) {
@@ -253,7 +253,7 @@ func NewMockClient(opts ...restclient.RestClientOption) *MockClient {
 }
 
 func Test_metrics(t *testing.T) {
-	Convey("Should be equal to go-doudou", t, func() {
+	Convey("Should be equal to odin", t, func() {
 		go func() {
 			srv := rest.NewRestServer()
 			srv.AddRoute(Routes(NewMocksvcHandler())...)
@@ -266,12 +266,12 @@ func Test_metrics(t *testing.T) {
 		defer cancel()
 		_, ret, err := client.GetUser(ctx, nil)
 		So(err, ShouldBeNil)
-		So(ret, ShouldEqual, "go-doudou")
+		So(ret, ShouldEqual, "odin")
 	})
 }
 
 func Test_NacosConfigType(t *testing.T) {
-	Convey("Should be equal to go-doudou with nacos config", t, func() {
+	Convey("Should be equal to odin with nacos config", t, func() {
 		ctrl := gomock.NewController(t)
 		defer ctrl.Finish()
 		dataId := ".env"
@@ -314,12 +314,12 @@ func Test_NacosConfigType(t *testing.T) {
 		defer cancel()
 		_, ret, err := client.GetUser(ctx, nil)
 		So(err, ShouldBeNil)
-		So(ret, ShouldEqual, "go-doudou")
+		So(ret, ShouldEqual, "odin")
 	})
 }
 
 func Test_UnknownRemoteConfigType(t *testing.T) {
-	Convey("Should be equal to go-doudou with unknown remote config type", t, func() {
+	Convey("Should be equal to odin with unknown remote config type", t, func() {
 		_ = config.GddConfigRemoteType.Write("Unknown")
 		config.GddPort.Write("6061")
 		rest.InitialiseRemoteConfigListener()
@@ -335,12 +335,12 @@ func Test_UnknownRemoteConfigType(t *testing.T) {
 		defer cancel()
 		_, ret, err := client.GetUser(ctx, nil)
 		So(err, ShouldBeNil)
-		So(ret, ShouldEqual, "go-doudou")
+		So(ret, ShouldEqual, "odin")
 	})
 }
 
 func Test_ApolloConfigType(t *testing.T) {
-	Convey("Should be equal to go-doudou with apollo config", t, func() {
+	Convey("Should be equal to odin with apollo config", t, func() {
 		ctrl := gomock.NewController(t)
 		defer ctrl.Finish()
 		configClient := mock.NewMockClient(ctrl)
@@ -382,7 +382,7 @@ func Test_ApolloConfigType(t *testing.T) {
 		defer cancel()
 		_, ret, err := client.GetUser(ctx, nil)
 		So(err, ShouldBeNil)
-		So(ret, ShouldEqual, "go-doudou")
+		So(ret, ShouldEqual, "odin")
 	})
 }
 
@@ -396,7 +396,7 @@ func TestCallbackOnChange(t *testing.T) {
 			Changes: map[string]maputils.Change{
 				"gdd.manage.user": {
 					OldValue:   "admin",
-					NewValue:   "go-doudou",
+					NewValue:   "odin",
 					ChangeType: maputils.MODIFIED,
 				},
 			},
@@ -409,17 +409,17 @@ func TestCallbackOnChange(t *testing.T) {
 			Changes: map[string]maputils.Change{
 				"gdd.manage.user": {
 					OldValue:   "admin",
-					NewValue:   "go-doudou",
+					NewValue:   "odin",
 					ChangeType: maputils.MODIFIED,
 				},
 			},
 		})
-		So(config.GddManageUser.Load(), ShouldEqual, "go-doudou")
+		So(config.GddManageUser.Load(), ShouldEqual, "odin")
 	})
 }
 
 func Test_log_get_text(t *testing.T) {
-	Convey("Should be equal to go-doudou", t, func() {
+	Convey("Should be equal to odin", t, func() {
 		config.GddLogReqEnable.Write("true")
 		config.GddPort.Write("6063")
 		go func() {
@@ -434,7 +434,7 @@ func Test_log_get_text(t *testing.T) {
 		defer cancel()
 		_, ret, err := client.GetUser(ctx, nil)
 		So(err, ShouldBeNil)
-		So(ret, ShouldEqual, "go-doudou")
+		So(ret, ShouldEqual, "odin")
 	})
 }
 
@@ -453,8 +453,8 @@ func Test_log_post_json(t *testing.T) {
 		ctx, cancel := context.WithTimeout(context.Background(), 10*time.Second)
 		defer cancel()
 		_, ret, err := client.SaveUser(ctx, nil, UserVo{
-			Username: "go-doudou",
-			Password: "go-doudou",
+			Username: "odin",
+			Password: "odin",
 		})
 		So(err, ShouldBeNil)
 		So(ret, ShouldEqual, "OK")
@@ -475,7 +475,7 @@ func Test_log_post_formdata(t *testing.T) {
 		client := NewMockClient()
 		ctx, cancel := context.WithTimeout(context.Background(), 10*time.Second)
 		defer cancel()
-		_, ret, err := client.SignUp(ctx, nil, "go-doudou", "go-doudou")
+		_, ret, err := client.SignUp(ctx, nil, "odin", "odin")
 		So(err, ShouldBeNil)
 		So(ret, ShouldEqual, "OK")
 	})
@@ -491,7 +491,7 @@ func Test_basicauth_401(t *testing.T) {
 			srv.Run()
 		}()
 		time.Sleep(10 * time.Millisecond)
-		resp, err := http.Get("http://localhost:6066/go-doudou/config")
+		resp, err := http.Get("http://localhost:6066/odin/config")
 		So(err, ShouldBeNil)
 		So(resp.StatusCode, ShouldEqual, 401)
 	})
@@ -508,7 +508,7 @@ func Test_basicauth_200(t *testing.T) {
 			srv.Run()
 		}()
 		time.Sleep(10 * time.Millisecond)
-		resp, err := http.Get("http://admin:admin@localhost:6066/go-doudou/config")
+		resp, err := http.Get("http://admin:admin@localhost:6066/odin/config")
 		So(err, ShouldBeNil)
 		So(resp.StatusCode, ShouldEqual, 200)
 	})
@@ -546,7 +546,7 @@ func Test_bulkhead(t *testing.T) {
 		client := NewMockClient()
 		ctx, cancel := context.WithTimeout(context.Background(), 10*time.Second)
 		defer cancel()
-		_, ret, err := client.SignUp(ctx, nil, "go-doudou", "go-doudou")
+		_, ret, err := client.SignUp(ctx, nil, "odin", "odin")
 		So(err, ShouldBeNil)
 		So(ret, ShouldEqual, "OK")
 	})
@@ -578,7 +578,7 @@ func Test_bulkhead_fail(t *testing.T) {
 		client := NewMockClient()
 		ctx, cancel := context.WithTimeout(context.Background(), 10*time.Second)
 		defer cancel()
-		_, _, err := client.SignUp(ctx, nil, "go-doudou", "go-doudou")
+		_, _, err := client.SignUp(ctx, nil, "odin", "odin")
 		So(err.Error(), ShouldEqual, "too many requests")
 	})
 }

@@ -1,8 +1,8 @@
 package memberlist
 
 import (
-	"github.com/youminxue/v2/framework/internal/config"
-	"github.com/youminxue/v2/toolkit/memberlist"
+	"github.com/youminxue/odin/framework/internal/config"
+	"github.com/youminxue/odin/toolkit/memberlist"
 	"os"
 	"testing"
 )

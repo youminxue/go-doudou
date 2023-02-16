@@ -5,8 +5,8 @@ import (
 	"fmt"
 	"github.com/pkg/errors"
 	"github.com/sirupsen/logrus"
-	"github.com/youminxue/v2/toolkit/astutils"
-	"github.com/youminxue/v2/toolkit/caller"
+	"github.com/youminxue/odin/toolkit/astutils"
+	"github.com/youminxue/odin/toolkit/caller"
 	"os"
 	"path/filepath"
 	"strings"
@@ -16,9 +16,9 @@ import (
 	_ "github.com/go-sql-driver/mysql"
 	"github.com/iancoleman/strcase"
 	"github.com/jmoiron/sqlx"
-	"github.com/youminxue/v2/cmd/internal/ddl/codegen"
-	"github.com/youminxue/v2/cmd/internal/ddl/config"
-	"github.com/youminxue/v2/cmd/internal/ddl/table"
+	"github.com/youminxue/odin/cmd/internal/ddl/codegen"
+	"github.com/youminxue/odin/cmd/internal/ddl/config"
+	"github.com/youminxue/odin/cmd/internal/ddl/table"
 )
 
 // Ddl is for ddl command

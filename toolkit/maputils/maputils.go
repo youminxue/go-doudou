@@ -1,7 +1,7 @@
 package maputils
 
 import (
-	"github.com/youminxue/v2/toolkit/sliceutils"
+	"github.com/youminxue/odin/toolkit/sliceutils"
 	"reflect"
 )
 

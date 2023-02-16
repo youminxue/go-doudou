@@ -2,10 +2,10 @@ package banner
 
 import (
 	"github.com/common-nighthawk/go-figure"
-	"github.com/youminxue/v2/framework"
-	"github.com/youminxue/v2/framework/internal/config"
-	"github.com/youminxue/v2/toolkit/cast"
-	"github.com/youminxue/v2/toolkit/stringutils"
+	"github.com/youminxue/odin/framework"
+	"github.com/youminxue/odin/framework/internal/config"
+	"github.com/youminxue/odin/toolkit/cast"
+	"github.com/youminxue/odin/toolkit/stringutils"
 	"sync"
 )
 

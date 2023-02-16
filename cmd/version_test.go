@@ -4,9 +4,9 @@ import (
 	"github.com/golang/mock/gomock"
 	"github.com/pkg/errors"
 	. "github.com/smartystreets/goconvey/convey"
-	"github.com/youminxue/v2/cmd"
-	"github.com/youminxue/v2/cmd/internal/svc"
-	"github.com/youminxue/v2/cmd/mock"
+	"github.com/youminxue/odin/cmd"
+	"github.com/youminxue/odin/cmd/internal/svc"
+	"github.com/youminxue/odin/cmd/mock"
 	"testing"
 )
 

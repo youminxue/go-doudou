@@ -3,7 +3,7 @@ package codegen
 import (
 	"encoding/json"
 	"fmt"
-	"github.com/youminxue/v2/toolkit/astutils"
+	"github.com/youminxue/odin/toolkit/astutils"
 	"go/ast"
 	"strings"
 )
@@ -16,7 +16,7 @@ import (
 // Support anonymous struct type
 // as struct field type in vo and dto package
 // or as parameter type in method signature in svc.go file besides context.Context, multipart.FileHeader, v3.FileModel, os.File
-// when go-doudou command line flag doc is true
+// when odin command line flag doc is true
 func ExprStringP(expr ast.Expr) string {
 	switch _expr := expr.(type) {
 	case *ast.Ident:

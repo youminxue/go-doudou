@@ -2,7 +2,7 @@ package sliceutils
 
 import (
 	"github.com/stretchr/testify/assert"
-	"github.com/youminxue/v2/toolkit/cast"
+	"github.com/youminxue/odin/toolkit/cast"
 	"reflect"
 	"testing"
 )

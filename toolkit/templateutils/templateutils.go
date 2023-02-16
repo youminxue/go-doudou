@@ -3,7 +3,7 @@ package templateutils
 import (
 	"bytes"
 	"github.com/pkg/errors"
-	"github.com/youminxue/v2/toolkit/caller"
+	"github.com/youminxue/odin/toolkit/caller"
 	"path/filepath"
 	"strings"
 	"text/template"

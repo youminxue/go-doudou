@@ -9,13 +9,13 @@ import (
 	"github.com/sirupsen/logrus"
 	"github.com/wubin1989/nacos-sdk-go/v2/common/constant"
 	"github.com/wubin1989/nacos-sdk-go/v2/vo"
-	"github.com/youminxue/v2/framework"
-	"github.com/youminxue/v2/framework/configmgr"
-	"github.com/youminxue/v2/toolkit/cast"
-	"github.com/youminxue/v2/toolkit/dotenv"
-	"github.com/youminxue/v2/toolkit/stringutils"
-	"github.com/youminxue/v2/toolkit/yaml"
-	"github.com/youminxue/v2/toolkit/zlogger"
+	"github.com/youminxue/odin/framework"
+	"github.com/youminxue/odin/framework/configmgr"
+	"github.com/youminxue/odin/toolkit/cast"
+	"github.com/youminxue/odin/toolkit/dotenv"
+	"github.com/youminxue/odin/toolkit/stringutils"
+	"github.com/youminxue/odin/toolkit/yaml"
+	"github.com/youminxue/odin/toolkit/zlogger"
 	_ "go.uber.org/automaxprocs"
 	"net"
 	"net/url"
@@ -43,20 +43,20 @@ func LoadConfigFromRemote() {
 		nacosConfigGroup := GddNacosConfigGroup.LoadOrDefault(DefaultGddNacosConfigGroup)
 		nacosConfigDataid := GddNacosConfigDataid.LoadOrDefault(DefaultGddNacosConfigDataid)
 		if stringutils.IsEmpty(nacosConfigDataid) {
-			panic(errors.New("[go-doudou] nacos config dataId is required"))
+			panic(errors.New("[odin] nacos config dataId is required"))
 		}
 		err := configmgr.LoadFromNacos(GetNacosClientParam(), nacosConfigDataid, nacosConfigFormat, nacosConfigGroup)
 		if err != nil {
-			panic(errors.Wrap(err, "[go-doudou] fail to load config from Nacos"))
+			panic(errors.Wrap(err, "[odin] fail to load config from Nacos"))
 		}
 	case ApolloConfigType:
 		if stringutils.IsEmpty(GddServiceName.Load()) {
-			panic(errors.New("[go-doudou] service name is required"))
+			panic(errors.New("[odin] service name is required"))
 		}
 		apolloCluster := GddApolloCluster.LoadOrDefault(DefaultGddApolloCluster)
 		apolloAddr := GddApolloAddr.LoadOrDefault(DefaultGddApolloAddr)
 		if stringutils.IsEmpty(apolloAddr) {
-			panic(errors.New("[go-doudou] apollo config service address is required"))
+			panic(errors.New("[odin] apollo config service address is required"))
 		}
 		apolloNamespace := GddApolloNamespace.LoadOrDefault(DefaultGddApolloNamespace)
 		apolloBackup := cast.ToBoolOrDefault(GddApolloBackupEnable.Load(), DefaultGddApolloBackupEnable)
@@ -79,7 +79,7 @@ func LoadConfigFromRemote() {
 		}
 		configmgr.LoadFromApollo(c)
 	default:
-		panic(fmt.Errorf("[go-doudou] unknown config type: %s\n", configType))
+		panic(fmt.Errorf("[odin] unknown config type: %s\n", configType))
 	}
 }
 
@@ -139,7 +139,7 @@ const (
 	GddPort envVariable = "GDD_PORT"
 	// GddGrpcPort sets bind port for grpc server
 	GddGrpcPort envVariable = "GDD_GRPC_PORT"
-	// GddManage if true, it will add built-in apis with /go-doudou path prefix for online api document and service status monitor etc.
+	// GddManage if true, it will add built-in apis with /odin path prefix for online api document and service status monitor etc.
 	GddManage envVariable = "GDD_MANAGE_ENABLE"
 	// GddManageUser manage api endpoint http basic auth user
 	GddManageUser envVariable = "GDD_MANAGE_USER"
@@ -323,11 +323,11 @@ func GetNacosClientParam() vo.NacosClientParam {
 	for _, addr := range addrs {
 		u, err := url.Parse(addr)
 		if err != nil {
-			panic(fmt.Errorf("[go-doudou] failed to create nacos discovery client: %v", err))
+			panic(fmt.Errorf("[odin] failed to create nacos discovery client: %v", err))
 		}
 		host, port, err := net.SplitHostPort(u.Host)
 		if err != nil {
-			panic(fmt.Errorf("[go-doudou] failed to create nacos discovery client: %v", err))
+			panic(fmt.Errorf("[odin] failed to create nacos discovery client: %v", err))
 		}
 		serverConfigs = append(serverConfigs, *constant.NewServerConfig(
 			host,
@@ -346,7 +346,7 @@ func GetNacosClientParam() vo.NacosClientParam {
 func GetServiceName() string {
 	service := GddServiceName.LoadOrDefault(DefaultGddServiceName)
 	if stringutils.IsEmpty(service) {
-		zlogger.Panic().Msgf("[go-doudou] no value for environment variable %s found", string(GddServiceName))
+		zlogger.Panic().Msgf("[odin] no value for environment variable %s found", string(GddServiceName))
 	}
 	return service
 }

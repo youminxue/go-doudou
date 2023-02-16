@@ -1,7 +1,7 @@
 package main
 
 import (
-	"github.com/youminxue/v2/esutils"
+	"github.com/youminxue/odin/esutils"
 	"time"
 )
 

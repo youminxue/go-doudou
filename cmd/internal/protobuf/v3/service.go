@@ -3,9 +3,9 @@ package v3
 import (
 	"fmt"
 	"github.com/iancoleman/strcase"
-	"github.com/youminxue/v2/toolkit/astutils"
-	"github.com/youminxue/v2/toolkit/constants"
-	"github.com/youminxue/v2/version"
+	"github.com/youminxue/odin/toolkit/astutils"
+	"github.com/youminxue/odin/toolkit/constants"
+	"github.com/youminxue/odin/version"
 	"reflect"
 	"strings"
 	"time"
@@ -38,7 +38,7 @@ type Service struct {
 	Package   string
 	GoPackage string
 	Syntax    string
-	// go-doudou version
+	// odin version
 	Version  string
 	ProtoVer string
 	Rpcs     []Rpc

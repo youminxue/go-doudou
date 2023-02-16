@@ -2,7 +2,7 @@ package templateutils
 
 import (
 	"bytes"
-	"github.com/youminxue/v2/toolkit/constants"
+	"github.com/youminxue/odin/toolkit/constants"
 	"strings"
 	"text/template"
 	"time"

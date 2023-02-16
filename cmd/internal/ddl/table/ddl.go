@@ -11,18 +11,18 @@ import (
 	"github.com/rs/zerolog"
 	"github.com/testcontainers/testcontainers-go"
 	"github.com/testcontainers/testcontainers-go/wait"
-	"github.com/youminxue/v2/cmd/internal/ddl/columnenum"
-	"github.com/youminxue/v2/cmd/internal/ddl/config"
-	"github.com/youminxue/v2/cmd/internal/ddl/ddlast"
-	"github.com/youminxue/v2/cmd/internal/ddl/extraenum"
-	"github.com/youminxue/v2/cmd/internal/ddl/sortenum"
-	"github.com/youminxue/v2/toolkit/astutils"
-	"github.com/youminxue/v2/toolkit/caller"
-	"github.com/youminxue/v2/toolkit/pathutils"
-	"github.com/youminxue/v2/toolkit/sliceutils"
-	"github.com/youminxue/v2/toolkit/sqlext/wrapper"
-	"github.com/youminxue/v2/toolkit/stringutils"
-	"github.com/youminxue/v2/toolkit/zlogger"
+	"github.com/youminxue/odin/cmd/internal/ddl/columnenum"
+	"github.com/youminxue/odin/cmd/internal/ddl/config"
+	"github.com/youminxue/odin/cmd/internal/ddl/ddlast"
+	"github.com/youminxue/odin/cmd/internal/ddl/extraenum"
+	"github.com/youminxue/odin/cmd/internal/ddl/sortenum"
+	"github.com/youminxue/odin/toolkit/astutils"
+	"github.com/youminxue/odin/toolkit/caller"
+	"github.com/youminxue/odin/toolkit/pathutils"
+	"github.com/youminxue/odin/toolkit/sliceutils"
+	"github.com/youminxue/odin/toolkit/sqlext/wrapper"
+	"github.com/youminxue/odin/toolkit/stringutils"
+	"github.com/youminxue/odin/toolkit/zlogger"
 	"go/ast"
 	"go/parser"
 	"go/token"
@@ -564,7 +564,7 @@ func Setup() (func(), *sqlx.DB, error) {
 	var conf config.DbConfig
 	err = envconfig.Process("db", &conf)
 	if err != nil {
-		return nil, nil, errors.Wrap(err, "[go-doudou] Error processing env")
+		return nil, nil, errors.Wrap(err, "[odin] Error processing env")
 	}
 	conn := fmt.Sprintf("%s:%s@tcp(%s:%s)/%s?charset=%s",
 		conf.User,

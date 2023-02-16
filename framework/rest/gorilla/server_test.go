@@ -1,7 +1,7 @@
 package gorilla
 
 import (
-	"github.com/youminxue/v2/framework/rest"
+	"github.com/youminxue/odin/framework/rest"
 	"testing"
 )
 

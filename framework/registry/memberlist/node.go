@@ -7,15 +7,15 @@ import (
 	"github.com/hashicorp/go-msgpack/codec"
 	"github.com/hashicorp/logutils"
 	"github.com/pkg/errors"
-	"github.com/youminxue/v2/framework/buildinfo"
-	"github.com/youminxue/v2/framework/configmgr"
-	"github.com/youminxue/v2/framework/internal/config"
-	cons "github.com/youminxue/v2/framework/registry/constants"
-	"github.com/youminxue/v2/toolkit/cast"
-	"github.com/youminxue/v2/toolkit/constants"
-	"github.com/youminxue/v2/toolkit/memberlist"
-	"github.com/youminxue/v2/toolkit/stringutils"
-	logger "github.com/youminxue/v2/toolkit/zlogger"
+	"github.com/youminxue/odin/framework/buildinfo"
+	"github.com/youminxue/odin/framework/configmgr"
+	"github.com/youminxue/odin/framework/internal/config"
+	cons "github.com/youminxue/odin/framework/registry/constants"
+	"github.com/youminxue/odin/toolkit/cast"
+	"github.com/youminxue/odin/toolkit/constants"
+	"github.com/youminxue/odin/toolkit/memberlist"
+	"github.com/youminxue/odin/toolkit/stringutils"
+	logger "github.com/youminxue/odin/toolkit/zlogger"
 	"io/ioutil"
 	"os"
 	"runtime"
@@ -80,11 +80,11 @@ func init() {
 	mconf.Events = events
 	var err error
 	if mlist, err = createMemberlist(mconf); err != nil {
-		panic(errors.Wrap(err, "[go-doudou] Failed to create memberlist"))
+		panic(errors.Wrap(err, "[odin] Failed to create memberlist"))
 	}
 	if err = join(); err != nil {
 		mlist.Shutdown()
-		panic(errors.Wrap(err, "[go-doudou] Node register failed"))
+		panic(errors.Wrap(err, "[odin] Node register failed"))
 	}
 	local := mlist.LocalNode()
 	logger.Info().Msgf("memberlist created. local node is Node %s, memberlist port %s", local.Name, fmt.Sprint(local.Port))
@@ -126,7 +126,7 @@ func join() error {
 	}
 	_, err := mlist.Join(s)
 	if err != nil {
-		return errors.Wrap(err, "[go-doudou] Failed to join cluster")
+		return errors.Wrap(err, "[odin] Failed to join cluster")
 	}
 	logger.Info().Msgf("Node %s joined cluster successfully", mlist.LocalNode().FullAddress())
 	return nil
@@ -148,7 +148,7 @@ func ParseMeta(node *memberlist.Node) (NodeMeta, error) {
 		r := bytes.NewReader(node.Meta)
 		dec := codec.NewDecoder(r, &codec.MsgpackHandle{})
 		if err := dec.Decode(&mm); err != nil {
-			logger.Panic().Err(errors.Wrap(err, "[go-doudou] parse node meta data error")).Msg("")
+			logger.Panic().Err(errors.Wrap(err, "[odin] parse node meta data error")).Msg("")
 		}
 	}
 	return mm, nil
@@ -282,9 +282,9 @@ func NewRest(data ...map[string]interface{}) {
 	}
 	delegator.AddService(si)
 	if err := mlist.UpdateNode(mlist.Config().TCPTimeout); err != nil {
-		panic(errors.Wrapf(err, "[go-doudou] failed to register %s service to memberlist", service))
+		panic(errors.Wrapf(err, "[odin] failed to register %s service to memberlist", service))
 	}
-	logger.Info().Msgf("[go-doudou] registered %s service to memberlist successfully", service)
+	logger.Info().Msgf("[odin] registered %s service to memberlist successfully", service)
 }
 
 func NewGrpc(data ...map[string]interface{}) {
@@ -302,9 +302,9 @@ func NewGrpc(data ...map[string]interface{}) {
 	}
 	delegator.AddService(si)
 	if err := mlist.UpdateNode(mlist.Config().TCPTimeout); err != nil {
-		panic(errors.Wrapf(err, "[go-doudou] failed to register %s service to memberlist", service))
+		panic(errors.Wrapf(err, "[odin] failed to register %s service to memberlist", service))
 	}
-	logger.Info().Msgf("[go-doudou] registered %s service to memberlist successfully", service)
+	logger.Info().Msgf("[odin] registered %s service to memberlist successfully", service)
 }
 
 type memConfigListener struct {
@@ -379,7 +379,7 @@ func registerConfigListener(memConf *memberlist.Config) {
 	case config.ApolloConfigType:
 		configmgr.ApolloClient.AddChangeListener(listener)
 	default:
-		panic(fmt.Errorf("[go-doudou] from registry pkg: unknown config type: %s\n", configType))
+		panic(fmt.Errorf("[odin] from registry pkg: unknown config type: %s\n", configType))
 	}
 }
 

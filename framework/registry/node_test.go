@@ -10,11 +10,11 @@ import (
 	"github.com/wubin1989/nacos-sdk-go/v2/clients/config_client"
 	"github.com/wubin1989/nacos-sdk-go/v2/clients/naming_client"
 	"github.com/wubin1989/nacos-sdk-go/v2/vo"
-	"github.com/youminxue/v2/framework/configmgr"
-	"github.com/youminxue/v2/framework/configmgr/mock"
-	"github.com/youminxue/v2/framework/internal/config"
-	"github.com/youminxue/v2/framework/registry/nacos"
-	nmock "github.com/youminxue/v2/framework/registry/nacos/mock"
+	"github.com/youminxue/odin/framework/configmgr"
+	"github.com/youminxue/odin/framework/configmgr/mock"
+	"github.com/youminxue/odin/framework/internal/config"
+	"github.com/youminxue/odin/framework/registry/nacos"
+	nmock "github.com/youminxue/odin/framework/registry/nacos/mock"
 	"testing"
 )
 
